@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
 import tfg.pokemon.jai.domain.Partida;
-import tfg.pokemon.jai.domain.Pokemon;
 import tfg.pokemon.jai.domain.Usuario;
 import tfg.pokemon.jai.repository.UsuarioRepository;
 
