@@ -1,0 +1,157 @@
+body {
+  color: white;
+  background: #333844;
+  font-family: "Heebo", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+button{
+  border: none;
+}
+
+.h1-nombre {
+  display: none;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 45%;
+  padding: 10%;
+  
+}
+
+#nombreFormContainer {
+  display: flex;
+  justify-content: center;
+}
+#keyboard {
+  margin-top: 10%; /* Espacio entre las cartas y el teclado */
+}
+
+.card.chica:focus {
+  
+  filter: drop-shadow(0 0 30px rgb(255, 0, 200)); /* Aplica sombra solo a la imagen de fondo dentro de .card.chica */
+}
+
+
+.card.chico:focus {
+  filter: drop-shadow(0 0 30px rgba(68, 0, 255, 1)); /* Aplica sombra solo a la imagen de fondo dentro de .card.chico */
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card {
+  width: 15vw;
+  height: 20vw;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin: 15px 40px; /* Ajusta el margen alrededor de las cartas */
+  background-color: transparent;
+  
+}
+
+.card:focus {
+  outline: none; /* Quita el borde blanco al enfocar la tarjeta */
+}
+.card.chica {
+  background-image: url(/img/chica.png);
+}
+
+.card.chico {
+  background-image: url(/img/chico.png);
+}
+body {
+ 
+  background-image: url(/img/fondoepico.jpeg);
+  background-size: 100% 100%;
+  background-repeat: none;
+  font-family: "Heebo", sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+h1 {
+ 
+  display: block;
+  position: absolute;
+  top: 0; /* Pegar el elemento h1 al borde superior */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Centrar horizontalmente */
+  font-family: pokemon solid;
+  font-size: 3vw;
+  letter-spacing: 4px;
+  color: #fec10e;
+  text-shadow: 2px 2px 2px #2c4690, 3px 2px 2px #2c4690, 3px 2px 2px #2c4690, 3px 3px 2px #2c4690;
+}
+
+
+
+.key-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.key,.iniciar {
+  /* background:linear-gradient(90deg, rgb(0, 72, 255) , rgb(21, 171, 168), rgb(97, 255, 54)); */
+  background: rgb(218, 212, 212);
+  color: black;
+  font-family: pokemon solid;
+  
+  letter-spacing: 4px;
+  color: #fec10e;
+  text-shadow: 2px 2px 2px #2c4690, 3px 2px 2px #2c4690, 3px 2px 2px #2c4690, 3px 3px 2px #2c4690;
+  font-size: 20px;
+  height: 60px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  
+}
+.key{
+  width: 50px;
+  border-radius: 50%;
+}
+.iniciar{
+width: 220px;
+border-radius: 20px;
+}
+
+.key:focus, .iniciar:focus {
+  background-color: rgb(99, 98, 98);
+}
+
+.key.barraEspacio {
+  width: 250px;
+  border-radius: 60%;
+}
+#nombre{
+  height: 30px;
+  width:300px ;
+  font-family: pokemon solid;
+  border-radius: 40px;
+  letter-spacing: 4px;
+  color: #fec10e;
+  background: rgb(218, 212, 212);
+
+  text-shadow: 2px 2px 2px #2c4690, 3px 2px 2px #2c4690, 3px 2px 2px #2c4690, 3px 3px 2px #2c4690;
+/*   background:linear-gradient(90deg, rgb(0, 72, 255) , rgb(0, 0, 166), rgb(97, 255, 54));
+ */}

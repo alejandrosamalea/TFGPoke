@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Pokemon</title>
+    <link rel="stylesheet" href="/css/administrar/pokedex.css">
+    <link rel="stylesheet" href="/css/administrar/crearPokemon.css">
+    <script src="/js/administrar/crearPokemon.js"></script>
+</head>
+<body>
+    <div class="contenedorCrearPokemon">
+        <form action="/pokemon/c" method="post">
+            <div class="pokemon-todos" id="listaPokemon">
+                <div class="pokemon">
+                    <div class="pokemon-imagen">
+                        <img src="/img/interrogacion.jpg" alt="">
+                    </div>
+                    <hr>
+                    <br>
+                    <div class="pokemon-info">
+                        <div class="nombre-contenedor">
+                            <div class="form__group field">
+                                <input type="input" name="nombrePokemon" id="nombrePokemon" class="form__field" placeholder="Nombre" required> 
+                                <label for="nombre" class="form__label">Nombre</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="pokemon-stats">
+                            <div class="form__group field stat">
+                                 <input type="number" name="vidaBasePokemon" id="vidaBasePokemon" class="form__field" placeholder="Vida Base" required> 
+                                <label for="vidaBase" class="form__label ">Vida Base</label>
+                            </div>
+                            <br>
+                            <div class="form__group field stat">
+                                <input type="number" name="defensaBasePokemon" id="defensaBasePokemon" class="form__field" placeholder="Defensa Base" required> 
+                                <label for="defensaBase" class="form__label">Defensa Base</label>
+                            </div>
+                            <br>
+                            <div class="form__group field stat">
+                                  <input type="number" name="ataqueBasePokemon" id="ataqueBasePokemon" class="form__field" placeholder="Ataque Base" required> 
+                                <label for="ataqueBase" class="form__label">Ataque Base</label> 
+                            </div>  
+                            <br>          
+                        </div>
+                        <label>Tipo:</label>
+                        <select id="tipo" name="tipo" class="select stat1">
+                            <option th:each="tipo: ${tipos}" th:text="${tipo.nombre}" th:value="${tipo.id}" th:class="'tipo-' + ${tipo.id}"></option> 
+                        </select>              
+                        <button type="submit" class="crear">
+                            <span>
+                            Crear
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

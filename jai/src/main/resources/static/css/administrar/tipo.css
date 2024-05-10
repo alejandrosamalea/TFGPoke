@@ -1,0 +1,223 @@
+div img {
+  display: block;
+  margin: 0 auto; 
+  width: 60%;
+}
+.card {
+  width: 10vw;
+  height: 15vw;
+  background: #07182E;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 10px; /* Espacio entre las cartas */
+  border: 0px;
+}
+
+.card:hover .edita
+{
+ opacity: 1;
+}
+
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+  }
+
+  /* el colorcito */
+  .colorcito
+  {
+    background: linear-gradient(to bottom right, #00FF00 , #007FFF,  green);
+  }
+  
+.edita
+{
+  z-index: 1;
+  margin-left: 70%;
+  margin-top: 5%;
+  opacity: 0;
+}
+.card h2 {
+  z-index: 0;
+  color: rgb(0, 0, 0);
+  font-size: 2em;
+}
+.titulo h2{
+text-align: center;
+width: 100%;
+font-size: 1.5vw;
+
+
+}
+.botonEdita
+{
+background-color: transparent;
+border: none;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  margin-top: -25px;
+  width: 100px;
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+
+}
+  .card2::before {
+    background-image: linear-gradient(180deg, rgb(0, 68, 255), rgb(0, 25, 245));
+  }
+  .card1::before {
+    background-image: linear-gradient(180deg, rgb(226, 40, 27), rgb(245, 49, 0));
+  }
+  .card3::before {
+    background-image: linear-gradient(180deg, rgb(17, 134, 7) , rgb(17, 134, 7));
+  }
+  .card5::before {
+    background-image: linear-gradient(180deg, rgb(107, 167, 224),rgb(107, 167, 224));
+  }
+  .card6::before {
+    background-image: linear-gradient(180deg, rgb(33, 93, 56), rgb(33, 93, 56));
+  }
+  .card7::before {
+    background-image: linear-gradient(180deg, rgb(133, 150, 165), rgb(133, 150, 165));
+  }
+  .card8::before {
+    background-image: linear-gradient(180deg, rgb(126, 58, 209),rgb(126, 58, 209));
+  }
+  .card9::before {
+    background-image: linear-gradient(180deg, rgb(179, 162, 37),rgb(179, 162, 37));
+  }
+  .card10::before {
+    background-image: linear-gradient(180deg, rgb(94, 77, 48), rgb(94, 77, 48));
+  }
+  .card11::before {
+    background-image: linear-gradient(180deg, rgb(188, 131, 230),rgb(188, 131, 230));
+  }
+  .card12::before {
+    background-image: linear-gradient(180deg, rgb(223, 101, 101),rgb(223, 101, 101));
+  }
+  .card13::before {
+    background-image: linear-gradient(180deg, rgb(209, 91, 222), rgb(209, 91, 222));
+  }
+  .card14::before {
+    background-image: linear-gradient(180deg, rgb(79, 56, 33), rgb(79, 56, 33));
+  }
+  .card15::before {
+    background-image: linear-gradient(180deg, rgb(65, 21, 125), rgb(65, 21, 125));
+  }
+  .card16::before {
+    background-image: linear-gradient(180deg, rgb(146, 193, 237), rgb(146, 193, 237));
+  }
+  .card4::before {
+    background-image: linear-gradient(180deg, rgb(68, 81, 223),rgb(68, 81, 223));
+  }
+  
+
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .card::after
+  {
+        content: '';
+    position: absolute; 
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el área */
+    background-position: center; 
+    inset: 5px;
+    border-radius: 15px;
+  }
+  .card1::after {
+
+    background-image: url('/img/tipo/tipoFuego.png');
+   
+  }  
+  .card2::after {
+    background-image: url('/img/tipo/tipoAgua.png');
+  }  
+  .card3::after {
+    background-image: url('/img/tipo/tipoPlanta.png');
+  }  
+  .card5::after {
+    background-image: url('/img/tipo/tipoVolador.png');
+  }  
+  .card6::after {
+    background-image: url('/img/tipo/tipoBicho.png');
+  }
+  .card7::after {
+    background-image: url('/img/tipo/tipoNormal.jpg');
+  }
+  .card8::after {
+    background-image: url('/img/tipo/tipoVeneno.png');
+  }
+  .card9::after {
+    background-image: url('/img/tipo/tipoElectico.png');
+    }
+  .card10::after {
+    background-image: url('/img/tipo/tipoTierra.png');
+  }
+  .card11::after {
+    background-image: url('/img/tipo/tipoHada.png');
+  }
+  .card12::after {
+    background-image: url('/img/tipo/tipoLucha.png');
+  }
+  .card13::after {
+    background-image: url('/img/tipo/tipoPsiquico.png');
+  }
+  .card14::after {
+    background-image: url('/img/tipo/tipoRoca.png');
+  }
+  .card15::after {
+    background-image: url('/img/tipo/tipoFantasma.png');
+  }
+  .card16::after {
+    background-image: url('/img/tipo/tipoHielo.png');
+  }
+  .card4::after {
+    background-image: url('/img/tipo/tipoDragon.png');
+  }
+  
+
+  @media screen and (min-width: 501px) {
+    table {
+        width: 100%;
+    }
+    .titulo {
+        display: inline-block;
+        width: 100%; /* Para que cada columna ocupe el 12.5% del ancho total */
+        margin-bottom: 10px; /* Reduce el espacio entre las cartas */
+    }
+    .card {
+      width: 10vw;
+      height: 15vw;
+    }
+  }
+  @media screen and (max-width: 2001px) {
+    .card {
+      width: 8vw;
+      height:11vw;
+    }
+}
+.imagenGestion
+{
+  margin-left: 17vw;
+}
+h2
+{
+  color: rgb(0, 0, 0);
+
+}
+
+  /* .card:hover:before {
+    background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+    animation: rotBGimg 3.5s linear infinite;
+  } 
+  
+ 

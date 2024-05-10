@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Pokémon</title>
+    <link rel="stylesheet" href="/css/administrar/ataque.css">
+    <script src="/js/administrar/ventanaAtaque.js"></script>
+
+
+</head>
+<body>
+    <table>
+        <tr th:each="row : ${#numbers.sequence(0, (ataques.size() / 4) - 1)}">
+           
+            <td th:each="index : ${#numbers.sequence(row * 4, row * 4 + 3)}" th:if="${index lt ataques.size()}">
+                
+                <div class="titulo">
+                    <div th:class="'card' + ${ataques[index].tipo.id} + ' card'">
+                        <button class="editar" th:attr="data-ataque-id=${ataques[__${index}__].id}">
+                            <span class="editar-texto" >Editar</span>
+                        </button>
+                        <h2 class="tipo" th:text="'Tipo '+ ${ataques[index].tipo.nombre}"></h2>
+                        <h2 class="nombre" th:text="${ataques[index].nombre}"></h2>
+                        <h2 class="danio" th:text="'Daño: '+ ${ataques[index].danio}"></h2>
+                       
+                    </div>
+                    
+
+                </div>
+            </td>
+        </tr>
+        <tr></tr>
+    </table>
+
+</body>
+</html>

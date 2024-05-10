@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/inicio/menu.js"></script>
+    <link rel="stylesheet" href="/css/inicio/menu.css">
+    <link rel="icon" type="image/png" href="../img/pokeball.png">
+
+
+</head>
+<body>
+   <div id="particles"></div>
+   <div class="overlay"></div> <!-- Elemento superpuesto para capturar clics -->
+    <div class="container">
+        <img src="/img/logo.png">
+        <!-- <img src="/img/subtitulo.png" class="subtitulo"> -->
+        <span class="bienvenido" th:text="|Bienvenido ${session.usuario.nombreUsuario}   |"></span>
+        <button id="logout" class="logout"></button>
+        <label class="subtitulo">incapaces edition</label>
+        <button id="nuevaPartida" class="estiloBoton">Nueva Partida</button><br>
+        <button id="continuarPartida"  class="estiloBoton">Continuar Partida</button><br>
+        <button id="administración"  class="estiloBoton">Administración</button>
+        <span id="rolUsuario" th:text="${session.usuario.rol}" style="display:none;"></span>
+    </div> 
+
+    
+</body>
+</html>

@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.chico {
+    position: absolute;
+    width: 64px; /* Ancho de un solo frame */
+    height: 64px; /* Altura de un solo frame */
+    background-image: url('/img/chicoSprite.png');
+    background-size: 256px 256px; /* Tamaño total de la imagen */
+    background-position: 0 0; /* Posición de la primera figura */
+}
+.casa {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border: solid 2px black;
+}

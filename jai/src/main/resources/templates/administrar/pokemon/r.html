@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pokémon</title>
+    <link rel="stylesheet" href="/css/administrar/pokedex.css">
+    <script src="/js/administrar/pokedex.js"></script>
+
+</head>
+<body>
+    <div id="todos">
+        <div class="pokemon-todos" id="listaPokemon">
+            <!-- Iterar sobre la lista de pokemones -->
+            <div th:each="poke : ${pokemones}" class="pokemon" >
+
+                <div class="pokemon-imagen" th:id="'pokemon-img-' + ${poke.id}">
+
+                </div>
+                <div class="pokemon-info">
+                    <div class="nombre-contenedor">
+                        <!-- Mostrar el nombre del Pokémon -->
+                        <h2 class="pokemon-nombre" th:text="${poke.nombre}"></h2>
+                    </div>
+                    <div class="pokemon-stats">
+                        <!-- Mostrar otras estadísticas del Pokémon -->
+                        <p class="stat" th:text="'Vida Base: ' + ${poke.vidaBase}"></p>
+                        <p class="stat" th:text="'Defensa Base: ' + ${poke.defensaBase}"></p>
+                        <p class="stat" th:text="'Ataque Base: ' + ${poke.ataqueBase}"></p>
+                        <p th:class="'stat tipo-' + ${poke.tipo.id}" th:text="'Tipo: ' + ${poke.tipo.nombre}"></p>
+                    </div>
+                    <!-- Agregar la imagen del Pokémon -->
+                </div>
+            </div>
+            <div class="pokemon">
+                <div class="pokemon-imagen" >
+                    <button onclick="window.location.href='/pokemon/c'"><img src="/img/aniadir.png" alt=""></button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

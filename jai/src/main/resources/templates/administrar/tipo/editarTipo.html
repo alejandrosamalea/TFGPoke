@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Ventana</title>
+    <link rel="stylesheet" href="/css/administrar/editarTipo.css">
+    <script src="/js/administrar/editarTipo.js"></script>
+</head>
+<body>
+    <div class="card">
+        <h4 class="title">Editar Pokemon</h4>
+        <form id="editForm" method="post" action="/tipo/update">
+            <div class="field">
+                <input autocomplete="off" id="nombre" placeholder="Nuevo Nombre" class="input-field" name="nombre" type="text">
+            </div>
+            <input type="hidden" name="idTipo" th:value="${idTipo.id}">
+            <button class="btn" type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

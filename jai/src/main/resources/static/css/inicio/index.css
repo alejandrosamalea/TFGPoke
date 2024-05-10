@@ -1,0 +1,46 @@
+body {
+    background-image: url('/img/fondo.jpg');
+    background-size: cover; /* Cubrir todo el cuerpo */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    /* Si deseas agregar más estilos al cuerpo, puedes hacerlo aquí */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    overflow: hidden;
+    
+}
+.mensaje {
+    margin-bottom: 60px; /* Espacio entre el mensaje y el borde inferior */
+}
+.parpadeo {
+    animation: parpadeo 1s infinite alternate; /* Parpadeo cada 2 segundos */
+}
+@keyframes parpadeo {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.volumen {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 32px; /* Tamaño de la imagen */
+    height: 32px; /* Tamaño de la imagen */
+}
+.titulo{
+    font-size: 3vw;
+    letter-spacing: 4px;
+    color: #FEC10E;
+    text-shadow: 
+        2px 2px 2px #2C4690,  
+         3px 2px 2px #2C4690,
+         3px 2px 2px #2C4690,
+         3px  3px 2px #2C4690;    
+         font-size: 600%;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia Sesion</title>
+    <link rel="stylesheet" href="/css/administrar/inicioRegistro.css">
+<link rel="icon" type="image/png" href="../img/pokeball.png">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="heading">Inicio de Sesión</div>
+            <form class="form" action="/inicioRegistro/inicioPost" method="post">
+                <input type="text" class="input" id="usuarioLog" name="usuarioLog" placeholder="Usuario" required>
+                <input type="password" class="input" id="passwordLog" name="passwordLog" placeholder="Password" required>
+                <input type="submit" class="login-button" value="Iniciar">
+                <div class="forgot-password"><a href="#">¿Olvidó su contraseña?</a></div>
+                <div class="forgot-password"><a href="/inicioRegistro/registro">¿No tiene cuenta?</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

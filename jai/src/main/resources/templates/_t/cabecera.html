@@ -1,0 +1,136 @@
+<!-- Page Wrapper -->
+  <div id="wrapper">
+
+	<!-- Sidebar -->
+	<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+		<!-- Sidebar - Brand -->
+		<a class="sidebar-brand d-flex align-items-center justify-content-center" href="../administrar/home">
+			
+			<div class="sidebar-brand-text mx-3">POKÉMON<sup>Gestión</sup></div>
+
+		</a>
+
+		<!-- Divider -->
+		<hr class="sidebar-divider my-0">
+
+		<!-- Nav Item - Dashboard -->
+		<!-- <li class="nav-item active">
+			<a class="nav-link" href="index.html">
+				<i class="fas fa-fw fa-tachometer-alt"></i>
+				<span>Gestión</span></a>
+		</li> -->
+
+		<!-- Divider -->
+		<hr class="sidebar-divider">
+
+		<!-- Heading -->
+		
+
+		<!-- Nav Item - Pages Collapse Menu -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="/pokemon/r">
+				<span>Pokémones</span>
+			</a>
+		</li>
+
+		<!-- Nav Item - Utilities Collapse Menu -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="/entrenador/r">
+				<span>Entrenadores</span>
+			</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="/tipo/r">
+				<span>Tipos</span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="/ataque/r">
+				<span>Ataques</span>
+			</a>
+		</li>
+
+		<!-- Nav Item - Pages Collapse Menu -->
+		
+
+		<!-- Divider -->
+		<hr class="sidebar-divider d-none d-md-block">
+
+		<!-- Sidebar Toggler (Sidebar) -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="/menu/menu">
+				<span>Volver al menu</span>
+				<img src="/img/volverAzul.png" alt="Volver al menú" class="iconoVolver">
+			</a>
+		</li>
+
+		<!-- Sidebar Message -->
+		
+
+	</ul>
+	<!-- End of Sidebar -->
+
+	<!-- Content Wrapper -->
+	
+	<div id="content-wrapper" class="d-flex flex-column colorcito">
+
+		<!-- Main Content -->
+		<div id="content" class="colorcito">
+
+			<!-- Topbar -->
+			<nav class="navbar navbar-expand navbar-light  topbar mb-4 static-top shadow">
+
+				<!-- Sidebar Toggle (Topbar) -->
+				<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+					<i class="fa fa-bars"></i>
+				</button>
+
+				<!-- Topbar Search -->
+				<div class="container" >
+					<img class="imagenGestion" src="/img/gestionImagen.png" alt="">
+				</div>
+
+				<!-- Topbar Navbar -->
+				<ul class="navbar-nav ml-auto">
+
+					<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+					<li class="nav-item dropdown no-arrow d-sm-none">
+						<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fas fa-search fa-fw"></i>
+						</a>
+						<!-- Dropdown - Messages -->
+						<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+							aria-labelledby="searchDropdown">
+							<form class="form-inline mr-auto w-100 navbar-search">
+								<div class="input-group">
+									<input type="text" class="form-control bg-light border-0 small"
+										placeholder="Search for..." aria-label="Search"
+										aria-describedby="basic-addon2">
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="button">
+											<i class="fas fa-search fa-sm"></i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</li>
+
+					<!-- Nav Item - Alerts -->
+					
+
+					<!-- Nav Item - User Information -->
+					<li class="nav-item dropdown no-arrow">
+						<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="mr-2 d-none d-lg-inline text-black-600 small" th:text="|Bienvenido ${session.usuario.nombreUsuario}   |"></span>
+
+						</a>
+				
+				</ul>
+
+			</nav>
+		
