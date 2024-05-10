@@ -41,6 +41,7 @@ function fetchPokemonData(i) {
             let defensa = poke.stats.find(stat => stat.stat.name === "defense").base_stat;
             let ataque = poke.stats.find(stat => stat.stat.name === "attack").base_stat;
             let vida = poke.stats.find(stat => stat.stat.name === "hp").base_stat;
+            console.log(i);
 
             // Almacena el nombre y el primer tipo del Pokémon en el array pokemonData en la posición correspondiente al índice menos uno.
             pokemonData[i - 1] = {
@@ -64,11 +65,10 @@ function enviarDatosPokemon(data) {
         },
         body: JSON.stringify(data)
     })
-    //Espera la respuesta del servidor y la convierte a JSON.
-    .then(response => response.json())
-    //Registra la respuesta del servidor en la consola del navegador.
-    .then(data => {
-        console.log('Respuesta del servidor:', data);
+    .then(() => {
+        alert("f")
+        // Redireccionar a la página index.html después de enviar los datos al servidor
+        window.location.href = '/index';
     })
     .catch(error => console.error('Error al enviar los datos de los Pokémon al servidor:', error));
 }

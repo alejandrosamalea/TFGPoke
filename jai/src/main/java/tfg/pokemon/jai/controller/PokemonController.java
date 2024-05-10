@@ -46,6 +46,7 @@ public class PokemonController {
     }
 
 
+
     @GetMapping("/r")
     public String r(ModelMap m) {
         // Devolver la vista apropiada

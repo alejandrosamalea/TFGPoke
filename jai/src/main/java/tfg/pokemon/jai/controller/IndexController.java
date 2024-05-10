@@ -21,14 +21,22 @@ public class IndexController {
 
 
     @GetMapping("/")
-    public String index(
+    public String pantallaCarga(
         ModelMap m
     ) {
-        m.put("view","index/index");
+        m.put("view","index/pantallaCarga");
         usuarioService.init();
         tipoService.init();
         ataqueService.init();
 
+        return "/index/pantallaCarga";
+    }
+
+    @GetMapping("/index")
+    public String index(
+        ModelMap m
+    ) {
+        m.put("view","index/index");
         return "/index/index";
     }
 }
