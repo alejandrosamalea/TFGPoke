@@ -1,6 +1,9 @@
 /* HTML: <div class="loader"></div> */
 body{
     overflow-y: hidden;
+    background-image: url('/img/fondoPantallaCarga.jpg');
+     background-size: 100% 100%;
+     -repeat: no-repeat;
 }
 
 .loader {
@@ -22,7 +25,7 @@ body{
   .loader::after {
     background: radial-gradient(at 75% 15%,#fffb,#0000 35%),
       radial-gradient(at 80% 40%,#0000,#0008),
-      radial-gradient(circle  5px,#fff 94%,#0000),
+      radial-gradient(circle  10px,#fff 94%,#0000),
       radial-gradient(circle 10px,#000 94%,#0000),
       linear-gradient(#F93318 0 0) top   /100% calc(50% - 5px),
       linear-gradient(#fff    0 0) bottom/100% calc(50% - 5px)
@@ -55,7 +58,7 @@ body{
   .texto
   {
     margin-top: 4vw;
-    margin-left: 29vw;
+    margin-left: 27vw;
     font-size: 5vw;
     white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 

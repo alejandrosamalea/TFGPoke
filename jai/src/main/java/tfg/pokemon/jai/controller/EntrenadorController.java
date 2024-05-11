@@ -11,15 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import tfg.pokemon.jai.service.AtaqueService;
 import tfg.pokemon.jai.service.PartidaService;
-import tfg.pokemon.jai.service.TipoService;
 
 @RequestMapping("/entrenador")
 @Controller
 
 public class EntrenadorController {
     
-    @Autowired
-    private TipoService tipoService;
 
     @Autowired
     private AtaqueService ataqueService;

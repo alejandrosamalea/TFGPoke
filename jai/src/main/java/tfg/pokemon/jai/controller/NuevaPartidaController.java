@@ -11,6 +11,7 @@ import tfg.pokemon.jai.domain.Entrenador;
 import tfg.pokemon.jai.domain.Usuario;
 import tfg.pokemon.jai.service.EntrenadorService;
 import tfg.pokemon.jai.service.PartidaService;
+import tfg.pokemon.jai.service.PokemonService;
 import tfg.pokemon.jai.service.UsuarioService;
 
 @RequestMapping("/nuevaPartida")
@@ -26,6 +27,9 @@ public class NuevaPartidaController {
 
     @Autowired
     UsuarioService usuarioService;
+
+    @Autowired
+    PokemonService pokemonService;
 
     @GetMapping("nuevaPartida")
     public String registro(
@@ -45,7 +49,9 @@ public class NuevaPartidaController {
         Entrenador entrenador = entrenadorService.findByNick(nickname);
         Usuario usuario = usuarioService.findById(idUsuario);
         partidaService.save(entrenador, usuario);
-        m.put("view", "partida/continuarPartida");
-        return "partida/continuarPartida";
+        m.put("pokemones", pokemonService.pokemonesIniciales(3));
+        m.put("entrenador", entrenador);
+        m.put("view", "partida/seleccionPoke");
+        return "partida/seleccionPoke";
     }
 }

@@ -6,12 +6,39 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/inicio/pantallaCarga.css">
     <script src="/js/inicio/pantallaCarga.js"></script>
-
 </head>
+<style>
+    /* Estilos para la barra de progreso */
+    .progress-bar {
+        width: 100%;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .progress {
+        width: 0;
+        height: 30px;
+        background-color: #4caf50;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+    }
+</style>
 <body> 
+    
     <div class="texto">
         <p></p>
     </div>
     <div class="loader"></div>
+    <!-- Barra de progreso -->
+    <div class="progress-bar">
+        <div id="progress" class="progress"></div>
+    </div>
+
+    <div th:each="poke : ${pokemones}">
+        <p id="nombre" th:text="${poke.id}" hidden></p>
+    </div>
+    <script src="/js/inicio/aniadirPokemonBD.js"></script>
 </body>
 </html>

@@ -9,9 +9,11 @@ import tfg.pokemon.jai.domain.Tipo;
 import tfg.pokemon.jai.repository.PokemonRepository;
 import tfg.pokemon.jai.repository.TipoRepository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @Service
 public class PokemonService {
@@ -82,6 +84,19 @@ public class PokemonService {
 
     public List<Pokemon> findAll() {
         return pokemonRepository.findAll();
+    }
+    public List<Pokemon> pokemonesIniciales(int cantidad) {
+        List<Pokemon> todosPokes = pokemonRepository.findAll();
+        List<Pokemon> pokesIniciales = new ArrayList<>();
+        Random random = new Random();
+        while (pokesIniciales.size() < cantidad) {
+            int indice = random.nextInt(todosPokes.size()); 
+            Pokemon pokeInicial = todosPokes.get(indice);
+            if (!pokesIniciales.contains(pokeInicial)) {
+                pokesIniciales.add(pokeInicial);
+            }
+        }        
+        return pokesIniciales;
     }
 
     public Pokemon findById(Long idPokemon) {
