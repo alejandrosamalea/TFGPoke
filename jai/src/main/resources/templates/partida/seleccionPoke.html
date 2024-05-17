@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>Selecciona tu Pokemon inicial</h1>        
+        <h1>Selecciona tu Pokemon inicial</h1>
         <section class="cards">
             <button th:each="pokemon : ${pokemones}"
                     th:text="${pokemon.nombre}" 

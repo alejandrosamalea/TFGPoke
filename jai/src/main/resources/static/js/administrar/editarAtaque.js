@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         // Enviar el formulario usando AJAX
         var formData = new FormData(document.getElementById('editForm'));
-        fetch('/tipo/update', {
+        fetch('/ataque/update', {
             method: 'POST',
             body: formData
         })

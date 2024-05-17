@@ -1,65 +1,146 @@
-/* HTML: <div class="loader"></div> */
-body{
-    overflow-y: hidden;
-    background-image: url('/img/fondoPantallaCarga.jpg');
-     background-size: 100% 100%;
-     -repeat: no-repeat;
+body {
+  overflow-y: hidden;
+  background-image: url('/img/fondoPantallaCarga.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%; /* Ajustar el ancho del contenedor principal */
+
+  text-align: center; /* Centrar el contenido del contenedor */
+
+}
+
+.texto {
+  font-size: 5vw;
+  margin-top: -4%;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  color: #FEC10E;
+  text-shadow: 
+      2px 2px 2px #2C4690,  
+      3px 2px 2px #2C4690,
+      3px 2px 2px #2C4690,
+      3px  3px 2px #2C4690;
 }
 
 .loader {
-    height: 15vw;
-    aspect-ratio: 1;
-    position: relative;
-    margin-top: 15vw;
-    margin-left: 42vw;
-  }
-  .loader::before,
-  .loader::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    transform-origin: bottom;
-  }
-  
-  .loader::after {
-    background: radial-gradient(at 75% 15%,#fffb,#0000 35%),
-      radial-gradient(at 80% 40%,#0000,#0008),
-      radial-gradient(circle  10px,#fff 94%,#0000),
-      radial-gradient(circle 10px,#000 94%,#0000),
-      linear-gradient(#F93318 0 0) top   /100% calc(50% - 5px),
-      linear-gradient(#fff    0 0) bottom/100% calc(50% - 5px)
-      #000;
-    background-repeat: no-repeat;
-    animation: l20 1s infinite cubic-bezier(0.5,120,0.5,-120);
-  }
-  
-  .loader::before {
-    background: #ddd;
-    filter: blur(8px);
-    transform: scaleY(0.4) translate(-13px, 0px);
-  }
-  
-  @keyframes l20 {
-   
-    30%,70% {
+  margin-top: 3%;
+  margin-left: 42%;
+
+  width: 15%; /* Ajustar el tamaño del loader */
+  padding-top: 15%; /* Mantener el aspect ratio cuadrado */
+  position: relative;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  transform-origin: bottom;
+}
+
+.loader::after {
+  background-image: url('/img/pokeball.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: l20 1s infinite cubic-bezier(0.5,120,0.5,-120);
+}
+
+.loader::before {
+  background: #ddd;
+  filter: blur(8px);
+  transform: scaleY(0.4) translate(-13px, 0px);
+}
+
+@keyframes l20 {
+  30%,70% {
       transform: rotate(0deg)
-    }
-  
-    49.99% {
+  }
+
+  49.99% {
       transform: rotate(0.2deg)
-    }
-  
-    50% {
+  }
+
+  50% {
       transform: rotate(-0.2deg)
+  }
+}
+
+.progress-bar {
+  
+  width: 89vw;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0;
+  height: 30px;
+  background-color: #00e2e9;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+/* animacion de sprite */
+.div-sprite{
+  margin-top:6%;
+  width: 99%;
+  height: 64px;
+
+
+}
+.sprite,.sprite2{
+  width:  64px;
+  height:  64px;
+  background-position: 0px -128px;
+  animation: moverse .5s steps(4) infinite, mover 16s infinite linear;
+  position: absolute; /* Posicionar absolutamente */
+}
+
+.sprite {
+  background: url('/img/spritePikachu.png');
+}
+
+.sprite2 {
+  background: url('/img/chicoSprite.png');
+}
+
+.sprite2 {
+  left: 128px; /* Ajustar la posición del segundo sprite para que esté al lado del primero */
+}
+@keyframes moverse {
+  from {
+    background-position: 0px -128px;
+      }
+ 
+       to { 
+        background-position: 254px -128px;
+  }
+}
+@keyframes mover {
+    0% {
+        transform: translateX(0px);
     }
-  }
-
-  .texto
-  {
-    margin-top: 4vw;
-    margin-left: 27vw;
-    font-size: 5vw;
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    49.99%{
+      transform :translateX(84vw)scaleX(1)
+    }
+    50%  {
+      transform: translateX(84vw)
+      scaleX(-1);
 
   }
+  100%  {
+    transform: translateX(0px)scaleX(-1);
+
+}
+}

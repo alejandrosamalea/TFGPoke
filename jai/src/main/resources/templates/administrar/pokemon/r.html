@@ -12,7 +12,8 @@
     <div id="todos">
         <div class="pokemon-todos" id="listaPokemon">
             <!-- Iterar sobre la lista de pokemones -->
-           
+            <div th:each="poke : ${pokemones}" class="pokemon" >
+
                 <div class="pokemon-imagen" th:id="'pokemon-img-' + ${poke.id}">
                     <p  id="idPokemon" th:text="${poke.id}" hidden></p>
                 </div>
@@ -40,7 +41,8 @@
 
         </div>
     </div>
-  
+    </div>
+
 
 </body>
 </html>

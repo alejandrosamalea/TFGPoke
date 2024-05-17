@@ -51,6 +51,7 @@ public class NuevaPartidaController {
         partidaService.save(entrenador, usuario);
         m.put("pokemones", pokemonService.pokemonesIniciales(3));
         m.put("entrenador", entrenador);
+        m.addAttribute("entrenador", entrenador);
         m.put("view", "partida/seleccionPoke");
         return "partida/seleccionPoke";
     }
