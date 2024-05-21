@@ -49,7 +49,7 @@ function fetchSequentially(index) {
 
 // Realiza una solicitud POST al servidor con los datos de los Pokémon en formato JSON.
 function enviarDatosPokemon(data) {
-    fetch('/pokemon/guardarNombreTipoPokemon', {
+    fetch('/especie/guardarNombreTipoPokemon', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

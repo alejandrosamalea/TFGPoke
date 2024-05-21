@@ -64,7 +64,7 @@ public class InicioRegistroController {
 		HttpSession s
 	) {
 		s.invalidate();
-		return "redirect:/";
+		return "redirect:/index";
 	}
 	
 }

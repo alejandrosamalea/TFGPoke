@@ -20,7 +20,7 @@ public class Tipo {
     private String nombre;
     
     @OneToMany(mappedBy = "tipo")
-    private Collection<Pokemon> contiene;
+    private Collection<Especie> contiene;
 
     @OneToMany(mappedBy = "tipo")
     private Collection<Ataque> ataques;

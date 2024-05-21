@@ -2,12 +2,14 @@ package tfg.pokemon.jai.domain;
 
 
 
+import java.util.Collection;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,26 +20,29 @@ public class Pokemon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
   
     @ManyToOne
-    private Tipo tipo;
+    private Especie especie;
+
+    private Integer nivel;
+
+    private Integer experiencia;
+
+    private Integer vidaActual;
+
+    private Integer vida;
+
+    private Integer fuerza;
+    
+    private Integer defensa;
+
+    
+    @ManyToMany
+    private Collection<Ataque> ataques;
+
+    @ManyToOne
+    private Entrenador entrenadorPokemon;
 
 
-
-    private Integer vidaBase;
-
-    private Integer defensaBase;
-
-
-    private Integer ataqueBase;
-
-
-    public Pokemon(String nombre, Integer vidaBase, Integer defensaBase, Integer ataqueBase) {
-        this.nombre = nombre;
-        this.vidaBase = vidaBase;
-        this.defensaBase = defensaBase;
-        this.ataqueBase = ataqueBase;
-    }
 
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="contenedorCrearPokemon">
-        <form action="/pokemon/c" method="post">
+        <form action="/especie/c" method="post" enctype="multipart/form-data">
             <div class="pokemon-todos" id="listaPokemon">
                 <div class="pokemon">
                     <div class="pokemon-imagen">
@@ -46,7 +46,11 @@
                         <label>Tipo:</label>
                         <select id="tipo" name="tipo" class="tipo-7">
                             <option th:each="tipo: ${tipos}" th:text="${tipo.nombre}" th:value="${tipo.id}" th:class="'tipo-' + ${tipo.id}"></option> 
-                        </select>              
+                        </select>       
+                        <br>
+                       
+                        <input type="file" id="imagenPokemon" name="imagenPokemon" accept=".png" multiple>
+
                         <button type="submit" class="crear">
                             <span>
                             Crear

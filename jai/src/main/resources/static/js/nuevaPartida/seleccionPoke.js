@@ -45,21 +45,31 @@ document.addEventListener('DOMContentLoaded', function() {
     $(botones).keyup(function (event) { 
         if (event.which == 13) {
             var idPoke = $(this).data('idPoke');
+            var idEntrenador = document.getElementById("idEntrenador").value
             
             if (idPoke) { // Si el botón tiene un enlace definido
                 // Crear un formulario dinámicamente
-                alert(idPoke)
+                alert(idPoke )
                 var form = document.createElement('form');
                 form.method = 'POST';
-                form.action = '/equipoEntrenador/crearEquipo'; // Ruta del controlador
+                form.action = '/empezarJuego/crearPoke'; // Ruta del controlador
     
                 // Agregar el enlace como un campo oculto en el formulario
                 var input = document.createElement('input');
                 input.type = 'hidden';
-                input.name = 'idPoke';
+                input.name = 'idPoke';  
                 input.id = 'idPoke';
                 input.value = idPoke;
                 form.appendChild(input);
+
+
+                var inputEntrenador = document.createElement('input');
+                inputEntrenador.type = 'hidden';
+                inputEntrenador.name = 'idEntrenador';
+                inputEntrenador.id = 'idEntrenador';
+                inputEntrenador.value = idEntrenador;
+                form.appendChild(inputEntrenador);
+                
     
                 // Agregar el formulario al DOM y enviarlo
                 document.body.appendChild(form);
