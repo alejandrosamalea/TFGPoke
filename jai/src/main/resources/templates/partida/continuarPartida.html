@@ -5,47 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Juego</title>
 <link rel="stylesheet" href="/css/continuarPartida.css">
-<style>
-    body {
-        margin: 0;
-        overflow: hidden;
-    }
-    .viewport {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        position: relative;
-    }
-    .gameArea {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 200%;
-        height: 200%;
-        transform: scale(2); /* Zoom al doble */
-        transform-origin: top left;
-    }
-    .casa {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        position: absolute;
-    }
-    .chico {
-       
-        background-color: blue;
-        position: absolute;
-    }
-</style>
+
 </head>
 <body>
-<div class="viewport">
-    <div class="gameArea">
-        <div class="casa" style="top: 100px; left: 100px;"></div>
-        <div class="casa" style="top: 200px; left: 200px;"></div>
         <div class="chico"></div>
-    </div>
-</div>
 <script src="/js/jquery-3.6.0.min.js"></script>
 <script src="/js/jquery.animateSprite.min.js"></script>
 <script src="/js/nuevaPartida/continuarPartida.js"></script>

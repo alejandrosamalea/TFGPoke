@@ -13,118 +13,101 @@ $(document).ready(function() {
 
     var positionX = 0;
     var positionY = 0;
-    var moving = false;
+    var moving = false; // Variable para controlar si el personaje está en movimiento
     var teclaPulsada = false;
-    var speed = 12; // Velocidad del personaje
-    var viewport = $('.viewport');
-    var gameArea = $('.gameArea');
-
     function moveCharacter(direction) {
+        var speed = 12; // Velocidad de movimiento
+
+        // Mueve al personaje en la dirección especificada
         switch (direction) {
-            case 'left':
-                teclaPulsada = true;
-                async function moveLeft() {
-                    while (teclaPulsada) {
-                        positionX -= speed;
-                        sprite.css('left', positionX + 'px');
-                        centerCamera();
-                        await new Promise(resolve => setTimeout(resolve, 50));
-                    }
-                }
-                moveLeft();
-                sprite.animateSprite('play', 'walkLeft', true);
-                break;
-
-            case 'up':
-                teclaPulsada = true;
-                async function moveUp() {
-                    while (teclaPulsada) {
-                        positionY -= speed;
-                        sprite.css('top', positionY + 'px');
-                        centerCamera();
-                        await new Promise(resolve => setTimeout(resolve, 50));
-                    }
-                }
-                moveUp();
-                sprite.animateSprite('play', 'walkUp', true);
-                break;
-
-            case 'right':
-                teclaPulsada = true;
-                async function moveRight() {
-                    while (teclaPulsada) {
-                        positionX += speed;
-                        sprite.css('left', positionX + 'px');
-                        centerCamera();
-                        await new Promise(resolve => setTimeout(resolve, 50));
-                    }
-                }
-                moveRight();
-                sprite.animateSprite('play', 'walkRight', true);
-                break;
-
-            case 'down':
-                teclaPulsada = true;
-                async function moveDown() {
-                    while (teclaPulsada) {
-                        positionY += speed;
-                        sprite.css('top', positionY + 'px');
-                        centerCamera();
-                        await new Promise(resolve => setTimeout(resolve, 50));
-                    }
-                }
-                moveDown();
-                sprite.animateSprite('play', 'walkDown', true);
-                break;
+    case 'left':
+    teclaPulsada = true;
+        async function moveLeft() {
+            while (teclaPulsada) {
+                positionX -= speed;
+                sprite.css('left', positionX + 'px');
+                await new Promise(resolve => setTimeout(resolve, 50)); // Retraso de 50 milisegundos
+            }
         }
+        moveLeft();
+        sprite.animateSprite('play', 'walkLeft', true);
+        break;
+
+    case 'up':
+    teclaPulsada = true;
+    async function moveTop() {
+        while (teclaPulsada) {
+            positionY -= speed;
+            sprite.css('top', positionY + 'px');
+            await new Promise(resolve => setTimeout(resolve, 50)); // Retraso de 50 milisegundos
+
+        }
+
+    }
+        moveTop();
+        sprite.animateSprite('play', 'walkUp', true);
+        break;
+
+    case 'right':
+    teclaPulsada = true;
+
+    async function moveRight() {
+        while (teclaPulsada) {
+            positionX += speed;
+            sprite.css('left', positionX + 'px');
+            await new Promise(resolve => setTimeout(resolve, 50)); // Retraso de 50 milisegundos
+
+        }
+
+    }
+        moveRight();
+        sprite.animateSprite('play', 'walkRight', true);
+        break;
+
+
+    case 'down':
+    teclaPulsada = true;
+
+    async function moveDown() {
+        while (teclaPulsada) {
+            positionY += speed;
+            sprite.css('top', positionY + 'px');
+            await new Promise(resolve => setTimeout(resolve, 50)); // Retraso de 50 milisegundos
+
+        }
+
+    }
+    moveDown();
+        sprite.animateSprite('play', 'walkDown', true);
+        break;
+}
     }
 
-    function centerCamera() {
-        var viewportWidth = viewport.width();
-        var viewportHeight = viewport.height();
-        var spriteWidth = sprite.width();
-        var spriteHeight = sprite.height();
-
-        var targetX = positionX + spriteWidth / 2 - viewportWidth / 2;
-        var targetY = positionY + spriteHeight / 2 - viewportHeight / 2;
-
-        // Calcular la distancia a desplazar la cámara en cada eje
-        var dx = (targetX - parseFloat(gameArea.css('left'))) / 10;
-        var dy = (targetY - parseFloat(gameArea.css('top'))) / 10;
-
-        // Mover la cámara suavemente hacia la posición del personaje
-        gameArea.css({
-            left: '+=' + dx + 'px',
-            top: '+=' + dy + 'px'
-        });
-    }
-
-    // Llamar a la función centerCamera() al inicio para centrar la cámara en el personaje
-    centerCamera();
-
+    // Cuando se presiona una tecla
     $(document).keydown(function(e) {
-        if (!moving) {
-            moving = true;
+        if (!moving) { // Comprueba si el personaje ya está en movimiento
+            moving = true; // Establece que el personaje está en movimiento
             switch(e.which) {
-                case 37: // Tecla de flecha izquierda
+                case 37: // Left arrow key
                     moveCharacter('left');
                     break;
-                case 38: // Tecla de flecha arriba
+                case 38: // Up arrow key
                     moveCharacter('up');
                     break;
-                case 39: // Tecla de flecha derecha
+                case 39: // Right arrow key
                     moveCharacter('right');
                     break;
-                case 40: // Tecla de flecha abajo
+                case 40: // Down arrow key
                     moveCharacter('down');
                     break;
             }
         }
     });
 
+    // Cuando se suelta una tecla
     $(document).keyup(function(e) {
-        moving = false;
+        moving = false; // Establece que el personaje ha dejado de moverse
         teclaPulsada = false;
-        sprite.animateSprite('stop');
+        sprite.animateSprite('stop'); // Detiene la animación del sprite
     });
 });
