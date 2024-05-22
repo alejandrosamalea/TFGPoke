@@ -15,6 +15,35 @@ $(document).ready(function() {
     var positionY = 0;
     var moving = false; // Variable para controlar si el personaje está en movimiento
     var teclaPulsada = false;
+
+    function checkCollision(newX, newY) {
+        var chico = $('.chico');
+        var chicoOffset = chico.offset();
+        var chicoWidth = chico.width();
+        var chicoHeight = chico.height();
+        chicoOffset.top = newY;
+        chicoOffset.left = newX;
+
+        var collision = false;
+
+        $('.limites, .casa, .casa1, #puerta1, .lago, .rio1, .rio2, .casa2, .casa3, .casa4').each(function() {
+            var $this = $(this);
+            var offset = $this.offset();
+            var width = $this.width();
+            var height = $this.height();
+
+            if (chicoOffset.left < offset.left + width &&
+                chicoOffset.left + chicoWidth > offset.left &&
+                chicoOffset.top < offset.top + height &&
+                chicoOffset.top + chicoHeight > offset.top) {
+                collision = true;
+                return false;
+            }
+        });
+        return collision;
+    }
+
+
     function moveCharacter(direction) {
         var speed = 12; // Velocidad de movimiento
 
@@ -102,6 +131,26 @@ $(document).ready(function() {
                     break;
             }
         }
+
+        $(".casa2").each(function() {
+            if (collisionCheck($(".chico"), $(this))) {
+                // Ajustar la posición para que el personaje rodee la casa
+                switch(e.which) {
+                    case 37: // Left arrow key
+                        positionX = $(this).offset().left + $(this).width();
+                        break;
+                    case 38: // Up arrow key
+                        positionY = $(this).offset().top + $(this).height();
+                        break;
+                    case 39: // Right arrow key
+                        positionX = $(this).offset().left - $(".chico").width();
+                        break;
+                    case 40: // Down arrow key
+                        positionY = $(this).offset().top - $(".chico").height();
+                        break;
+                }
+            }
+        });
     });
 
     // Cuando se suelta una tecla
@@ -110,4 +159,22 @@ $(document).ready(function() {
         teclaPulsada = false;
         sprite.animateSprite('stop'); // Detiene la animación del sprite
     });
+
+    function collisionCheck(div1, div2) {
+        var x1 = div1.offset().left;
+        var y1 = div1.offset().top;
+        var h1 = div1.outerHeight(true);
+        var w1 = div1.outerWidth(true);
+        var b1 = y1 + h1;
+        var r1 = x1 + w1;
+        var x2 = div2.offset().left;
+        var y2 = div2.offset().top;
+        var h2 = div2.outerHeight(true);
+        var w2 = div2.outerWidth(true);
+        var b2 = y2 + h2;
+        var r2 = x2 + w2;
+
+        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+        return true;
+    }
 });
