@@ -17,6 +17,10 @@ public class EntrenadorService {
         entrenadorRepository.save(entrenador);
     }
 
+    public Entrenador findById(Long idEntrenador){
+        return entrenadorRepository.findById(idEntrenador).orElse(null);
+    }
+
     public Entrenador findByNick(String entrenador) {
         return entrenadorRepository.findByNickname(entrenador);
     }

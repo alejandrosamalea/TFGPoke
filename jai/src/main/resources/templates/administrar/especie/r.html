@@ -12,10 +12,10 @@
     <div id="todos">
         <div class="pokemon-todos" id="listaPokemon">
             <!-- Iterar sobre la lista de pokemones -->
-            <div th:each="poke : ${pokemones}" class="pokemon" >
+            <div th:each="poke : ${especies}" class="pokemon" >
 
                 <div class="pokemon-imagen" th:id="'pokemon-img-' + ${poke.id}">
-
+                    <p  id="idPokemon" th:data-name="${poke.id}" th:text="${poke.imagen}" hidden></p>
                 </div>
                 <div class="pokemon-info">
                     <div class="nombre-contenedor">
@@ -34,13 +34,16 @@
             </div>
             <div class="pokemon">
                 <div class="pokemon-imagen" >
-                    <button onclick="window.location.href='/pokemon/c'"><img src="/img/aniadir.png" alt=""></button>
+                    <button onclick="window.location.href='/especie/c'"><img src="/img/aniadir.png" alt=""></button>
 
                 </div>
             </div>
 
         </div>
     </div>
+    </div>
+  
+  
 
 </body>
 </html>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import tfg.pokemon.jai.domain.Entrenador;
 import tfg.pokemon.jai.domain.Usuario;
 import tfg.pokemon.jai.service.EntrenadorService;
+import tfg.pokemon.jai.service.EspecieService;
 import tfg.pokemon.jai.service.PartidaService;
 import tfg.pokemon.jai.service.UsuarioService;
 
@@ -27,6 +28,9 @@ public class NuevaPartidaController {
     @Autowired
     UsuarioService usuarioService;
 
+    @Autowired
+    EspecieService especieService;
+
     @GetMapping("nuevaPartida")
     public String registro(
         ModelMap m
@@ -35,17 +39,22 @@ public class NuevaPartidaController {
         return "partida/nuevaPartida";
     }
     @GetMapping("inicioPost")
-    public String inicioPartida (
-        ModelMap m, 
-        @RequestParam(name="nombre") String nickname,
-        @RequestParam(name="genero") boolean genero,
-        @RequestParam(name = "id_usuario") Long idUsuario
-    ){
-        entrenadorService.save(nickname, genero);
-        Entrenador entrenador = entrenadorService.findByNick(nickname);
-        Usuario usuario = usuarioService.findById(idUsuario);
-        partidaService.save(entrenador, usuario);
-        m.put("view", "partida/continuarPartida");
-        return "partida/continuarPartida";
-    }
+public String inicioPartida (
+    ModelMap m, 
+    @RequestParam(name="nombre") String nickname,
+    @RequestParam(name="genero") boolean genero,
+    @RequestParam(name = "id_usuario") Long idUsuario
+){
+    entrenadorService.save(nickname, genero);
+    Entrenador entrenador = entrenadorService.findByNick(nickname);
+    Usuario usuario = usuarioService.findById(idUsuario);
+    partidaService.save(entrenador, usuario);
+
+    // Agregar el Entrenador al modelo para que esté disponible en la página de selección de Pokémon
+    m.put("entrenador", entrenador);
+
+    m.put("pokemones", especieService.pokemonesIniciales(3));
+    m.put("view", "partida/seleccionPoke");
+    return "partida/seleccionPoke";
+}
 }

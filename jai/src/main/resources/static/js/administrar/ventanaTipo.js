@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     var botonesEditar = document.querySelectorAll('.ventanaEditar');
     botonesEditar.forEach(function(button) {
@@ -10,14 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.focus) {
                 newWindow.focus();
             }
-            window.addEventListener('message', function(event) {
-                if (event.data === 'reloadParent') {
-                    // Si se recibe el mensaje 'reloadParent', recargar la página principal
-                    window.location.reload();
-                }
-            });
         });
     });
+    // Agregar un controlador de eventos para el mensaje
+    window.addEventListener('message', function(event) {
+    // Verificar si el mensaje recibido es 'reloadParent'
+    if (event.data == 'reloadParent') {
+        // Si es así, recargar la página principal
+        window.location.reload();
+    }
 });
-
-
+});

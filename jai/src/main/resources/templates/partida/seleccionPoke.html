@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/nuevaPartida/seleccionPoke.js"></script>
+    <link rel="stylesheet" href="/css/partida/seleccionPoke.css">
+</head>
+<body>
+    <div id="app">
+        <img src="/img/inicioJuego/profesor.png" class="profesor">
+        <div class="textoProfesor">
+            <label>¡Saludos, valiente entrenador! Soy el Profesor Dawid y he venido a buscar tu ayuda en una misión de vital importancia. Una nueva aventura Pokémon te espera, en la que deberás enfrentarte y derrotar a los malvados Profesores de Daw, quienes amenazan la paz y el equilibrio de nuestro mundo.
+                Para embarcarte en esta épica travesía, te ofrezco la oportunidad de elegir a uno de estos tres poderosos Pokémon como tu compañero el cual te ayudara para esta mision tan compleja.</label>
+        </div>       
+         <section class="cards">
+            <button th:each="pokemon : ${pokemones}"
+                    th:name="'poke-' + ${pokemon.id}" 
+                    th:id="${pokemon.id}" 
+                    class="card">
+            </button>
+        </section>
+        <button hidden th:id="idEntrenador" th:value="${entrenador.id}"></button>
+      </div>
+</body>
+</html>

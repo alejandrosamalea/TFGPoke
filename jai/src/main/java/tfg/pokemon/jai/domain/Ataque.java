@@ -1,9 +1,12 @@
 package tfg.pokemon.jai.domain;
 
+import java.util.Collection;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +24,9 @@ public class Ataque {
 
     @ManyToOne
     private Tipo tipo;
+
+    @ManyToMany(mappedBy = "ataques")
+    private Collection<Pokemon> pokemones;
 
     public Ataque(String nombre, int danio, Long idTipo) {
         this.nombre = nombre;
