@@ -30,8 +30,8 @@ public class EmpezarJuegoController {
     ) {
         Entrenador entrenador = entrenadorService.findById(idEntrenador);
         pokemonService.save(idPoke, entrenador);
-        m.put("view","partida/continuarPartida2");
-        return "partida/continuarPartida2";
+        m.put("view","partida/continuarPartida");
+        return "partida/continuarPartida";
     }
     
 }
