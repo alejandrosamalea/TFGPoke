@@ -1,34 +1,71 @@
+body{
+  background-image: url(/img/inicioJuego/laboratorio.jpg);
+  background-size: 100vw 100vh ;
+  overflow: hidden;
+}
 .cards {
+  
+position: absolute;
+width: 60%;
+margin-top: 30%;
+     opacity: 1;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    
   }
-  
+   
   .card {
-    width: calc((100vw - 60px) / 3);
-    max-width: 300px;
-    height: calc((100vw - 60px) / 3 * 1.37);
-    max-height: 411px;
+    max-width: 3400px;
+    max-height: 450px;
     position: relative;
     margin: 10px;
-    border-radius: 5% / 3.5%;
-    background-color: blue;
     transform-origin: center;
+    background-image: url(/img/pokeball.png);
+    background-size:100% 90% ;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
   }
   .card button {
-    color: white;
+    
     position: absolute;
     bottom: 10px;
     left: 10px;
     font-weight: bold;
+    border: none;
   }
   .card img {
-    margin-top: 20%;
-    height: 100px;
-    width: 100px;
+    margin-top: 15%;
+    height: 130px;
+    width: 130px;
+  }
+  .card:nth-child(2) {
+    margin-top: -150px;
   }
   .card:focus {
-    background-color: red;
+    filter: drop-shadow(0 0 30px rgb(242, 255, 0));
+    outline: none;
+  }
+  .profesor{
+    position: absolute;
+    width: 35vh;
+    height: 60vh;
+    margin-left: 60%;
+    margin-top: 17.5%;
+
+  }
+  .textoProfesor{
+    position: absolute;
+    background-color: white;
+    border: ridge 4px black;
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    margin-left: 40%;
+    font-size: 1.2vw;
+    margin-top: 20px;
+    
   }
   
