@@ -1,0 +1,328 @@
+body {
+
+    background-position: center;
+    overflow: hidden;
+background-color: black;
+}
+
+.chico {
+    position: absolute;
+    width: 64px; 
+    height: 64px; 
+    background-size: 256px 256px; 
+    background-position: 0 0; 
+    z-index: 0; 
+    background-image: url('/img/chicoSprite.png');
+    margin-left: 45%;
+    margin-top: 50%;
+}
+.fondoCasa{
+    position: absolute;
+    width: 1900px;
+    height: 1300px;
+    background-color: white;
+    background-image: url(/img/mapa/interiorCasaa/interiorCasa2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 15%;
+    margin-top: -100px;
+
+}
+
+.paredIzq
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 70%;
+    width: 0px;
+    margin-left: 7%;
+    margin-top: 25%;
+}
+.paredDer
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 70%;
+    width: 0px;
+    margin-left: 93%;
+    margin-top: 25%;
+}
+.paredAbajo1
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 0px;
+    width: 43%;
+    margin-left: 28%;
+    margin-top: 29%;
+}
+.paredAbajo2
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 0px;
+    width: 36%;
+    margin-left: 59%;
+    margin-top: 52%;
+}
+.paredArriba1
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 0px;
+    width: 29%;
+    margin-left: 10%;
+    margin-top: 52%;
+}
+
+.paredArriba3
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 9%;
+    width: 0px;
+    margin-left: 57%;
+    margin-top: 54%;
+}
+
+.paredEntrada1
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 9%;
+    width: 0px;
+    margin-left: 42%;
+    margin-top: 54%;
+}
+.paredArriba4
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 0px;
+    width: 17%;
+    margin-left: 30%;
+    margin-top: 48%;
+    
+}
+.paredMostrador1
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 0px;
+    width: 17%;
+    margin-left: 53%;
+    margin-top: 48%;
+}
+
+.puerta
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 0px;
+    width: 14%;
+    margin-left: 43%;
+    margin-top: 61%;
+
+}
+.mesa1
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 6%;
+    width: 7%;
+    margin-left: 11%;
+    margin-top: 42%;  
+}
+.mesa2
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 14%;
+    width: 10%;
+    margin-left: 86%;
+    margin-top: 40%;  
+}
+.mesa3
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 27%;
+    width: 20%;
+    margin-left: 53%;
+    margin-top: 5%;  
+}
+.mesa4
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 27%;
+    width: 20%;
+    margin-left: 27%;
+    margin-top: 5%;  
+}
+.paredGimnasioIzq
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 27%;
+    width: 0px;
+    margin-left: 27%;
+    margin-top: 29%;
+}
+.paredGimnasioDer
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 27%;
+    width: 0px;
+    margin-left: 72%;
+    margin-top: 29%;
+}
+.paredEscaletasIzq
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 46%;
+    width: 11%;
+    margin-left: 7%;
+    margin-top: 6%;
+}
+.paredEscaletasDer
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 48%;
+    width: 11%;
+    margin-left: 81%;
+    margin-top: 6%;
+}
+.paredArribaTodo
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 0%;
+    width: 78%;
+    margin-left: 5%;
+    margin-top: 8%;
+}
+
+.gimnasioArriba
+{
+    position: absolute;
+    border:solid red 2px;
+    height: 0px;
+    width: 43%;
+    margin-left: 28%;
+    margin-top: 35.5%;
+}
+.gimnasioMesaIzq
+{
+    position: absolute;
+    border:solid rgb(255, 0, 0) 2px;
+    height: 4%;
+    width: 2%;
+    margin-left: 46.5%;
+    margin-top:35%;
+}
+.gimnasioMesaDer
+{
+    position: absolute;
+    border:solid rgb(255, 0, 0) 2px;
+    height: 4%;
+    width: 2%;
+    margin-left: 51%;
+    margin-top:35%;
+}
+.personaje1
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 1%;
+    width: 1%;
+    margin-left: 26%;
+    margin-top: 12%;
+}
+.personaje2
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 1%;
+    width: 1%;
+    margin-left: 26%;
+    margin-top: 15%;
+}
+.personaje3
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 1%;
+    width: 1%;
+    margin-left: 46.5%;
+    margin-top: 17%;
+}
+.personaje4
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 0.5%;
+    width: 0.5%;
+    margin-left: 38.5%;
+    margin-top:26%;
+}
+.personaje5
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 0.5%;
+    width: 0.5%;
+    margin-left: 40%;
+    margin-top:36%;
+}
+.personaje6
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 0.5%;
+    width: 0.5%;
+    margin-left: 49.5%;
+    margin-top:38%;
+}
+.personaje7
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 0.5%;
+    width: 0.5%;
+    margin-left: 58.5%;
+    margin-top:36%;
+}
+.personaje8
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 1%;
+    width: 0.5%;
+    margin-left: 20%;
+    margin-top:46.5%;
+}
+.mariaColision
+{
+    position: absolute;
+    border:solid rgb(0, 17, 255) 2px;
+    height: 0.5%;
+    width: 0.5%;
+    margin-left: 49.5%;
+    margin-top:42%;
+}
+.maria
+{
+    background: url('/img/sprites/maria.png') no-repeat;
+    position: absolute;
+    width: 64px; 
+    height: 64px; 
+    background-size: 256px 256px; 
+    background-position: 0 0; 
+    z-index: 0; 
+    margin-left: 48%;
+    margin-top: 40%;
+}

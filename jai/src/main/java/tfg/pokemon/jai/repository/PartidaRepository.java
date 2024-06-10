@@ -7,5 +7,5 @@ import tfg.pokemon.jai.domain.Partida;
 
 @Repository
 public interface PartidaRepository extends JpaRepository<Partida, Long> {
-    
+    Partida findByEntrenadorId(Long idEntrenador);
 }

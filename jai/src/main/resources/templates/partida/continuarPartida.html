@@ -7,14 +7,33 @@
     <link rel="stylesheet" href="/css/continuarPartida.css">
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="/js/jquery.animateSprite.min.js"></script>
-    <script src="/js/nuevaPartida/continuarPartida.js"></script>
 
 </head>
 <body>
+    <!-- <button hidden id="genero" th:value="${entrenador.genero}"></button> -->
+    <button hidden id="posicion" th:value="${posicion}"></button>
+    <button hidden id="posicionY" th:value="${posicionY}"></button>
     <div class="limites">
-    <div class=" casa1"></div>
+    <div class="espacioHierba">
+        <div id="hierba1" class="hierba"></div>
+        <div id="hierba2" class="hierba"></div>
+        <div id="hierba3" class="hierba"></div>
+        <div id="hierba4" class="hierba"></div>
+        <div id="hierba5" class="hierba"></div>
+        <div id="hierba6" class="hierba"></div>
+        <div id="hierba7" class="hierba"></div>
+        <div id="hierba8" class="hierba"></div>
+        <div id="hierba9" class="hierba"></div>
+    </div>
+    <div class="casa1 casa">
     <div class="puerta1" id="puerta1"></div>
- 
+    <div class="frenteIzqCasa1"></div>
+    <div class="frenteDerCasa1"></div>
+    <div class="ladoIzqCasa1"></div>
+    <div class="ladoDerCasa1"></div>
+    <div class="ladoArribaCasa1"></div>
+
+    </div>
     <div class="lago">
         <div class="gyarados"></div>
     </div>
@@ -23,11 +42,99 @@
     <div class="puente">
         <img src="/img/mapa/puente.png" class="imagenPuente">
     </div>
+    <div class="flores"></div>
+   
+    <div class="casa casa2">
+        <div class="ladoIzqCasa1"></div>
+        <div class="ladoDerCasa2"></div>
+        <div class="ladoArribaCasa1"></div>
+        <div class="puerta2" id="puerta2"></div>
+        <div class="frenteIzqCasa1"></div>
+        <div class="frenteDerCasa1"></div>
+    </div>
+    <div class="casa casa3">
+        <div class="ladoIzqCasa1"></div>
+        <div class="ladoDerCasa1"></div>
+        <div class="ladoArribaCasa3"></div>
+        <div class="puerta3" id="puerta3"></div>
+        <div class="frenteDerCasa3"></div>
+        <div class="frenteIzqCasa3"></div>
 
-    <div class=" casa2"></div>
-    <div class=" casa3"></div>
-    <div class=" casa4"></div>
-    <div class="chico"></div>
+    </div>
+    <div class="casa casa4">
+        <div class="ladoIzqCasa4"></div>
+        <div class="ladoDerCasa4"></div>
+        <div class="ladoArribaIzqCasa4"></div>
+        <div class="ladoArribaDerCasa4"></div>
+        <div class="puerta4" id="puerta4"></div>
+        <div class="frenteDerCasa4"></div>
+        <div class="frenteIzqCasa4"></div>
+    </div>
+ 
+    <div id="cartaInfo" class="cartaInfo">
+        <button id="botonCerrarInfo" class="botonCerrarInfo" onclick="cerrarVentana()">X</button>
+        <label id="nombreEntrenador"></label>
+        <ul>
+            <li th:each="pokemon : ${entrenador.pokemones}">
+                <span th:text="${pokemon.especie.nombre}"></span>
+            </li>
+        </ul>
+
+    </div>
+<<<<<<< HEAD
+    <div class="chico" id="chico" 
+        th:data-idEntrenador="${entrenador.id}"
+        th:data-nombre="${entrenador.nickname}"
+        th:data-genero="${entrenador.genero}"
+        th:data-idUsuario="${partida.usuario.id}"
+    ></div>
+    <div class="naara"></div>    
+    
+    <p class="dialogoNaara" hidden></p>
+    <div class="naaraColision"></div>
+    </div>
+    <div class="limitebajo"></div>
+=======
+  
+    <div class="naara"></div>   
+    <div class="javier"></div> 
+    <div class="torres"></div>
+     
+    <p class="dialogoNaara" hidden></p>
+    <div class="naaraColision"></div>
+    <div class="carretera"></div>
+    <div class="chico" id="chico" 
+    th:data-idEntrenador="${entrenador.id}"
+    th:data-nombre="${entrenador.nickname}"
+    th:data-genero="${entrenador.genero}"
+    th:data-idUsuario="${partida.usuario.id}"
+></div>
+    <div class="avion">
+       
+    </div>
+    <div class="limiteAvionArriba"></div>
+    <div class="limiteAvionCentro"></div>
+    <div class="limiteAvionSegurata"></div>
+    <div class="vallas">
+    <div class="excavadora1"></div>
+    <div class="excavadora2"></div>
+    <div class="fuente"></div>
+    
+    </div>
+    <div class="gonzalo"></div>
+    <div class="textoGonzalo"><b>Gonzalo </b>: Cuando Javier y Torres se enteren de que he roto la carretilla me van a matar</div>         
+    
+    </div>
+    <div class="limitebajo"></div>
+ 
+
+>>>>>>> 04965b442d8b24eba99ee5976bad58f18ab1cbb3
+    <div id="menuJuego" class="menuJuego">
+        <button id="reanudar">Reanudar</button>
+        <button id="info">Info</button>
+        <button id="salir">Salir</button>
     </div>
 </body>
+<script src="/js/nuevaPartida/continuarPartida.js"></script>
+<script src="/js/nuevaPartida/buscarPokemon.js"></script>
 </html>

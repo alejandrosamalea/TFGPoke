@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/combate/combate2.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div class="generalCombate">
+
+        <div id="infoPokeSalvaje" class="infoPokeSalvaje">
+            <label id="nombrePokeSalvaje" th:text="${pokeSalvaje.nombre}"></label>
+            <label class="nivelSalvaje" id="nvlPokeSalvaje">Nvl</label>
+            <label id="vidaPokeSalvaje"></label>
+            <div class="barraVida">
+                <div class="vidaRestante" id="vidaRestanteNPC"></div>
+            </div>
+        </div>
+        <div class="imgPokeSalvaje" id="imgPokeSalvaje"><div class="circulo1"></div></div>
+        <div class="imgPokeEntrenador" id="imgPokeEntrenador"><div class="circulo2"></div></div>
+        <div class="infoPokeEntrenador">
+            <label th:text="${pokemon.especie.nombre}"></label>
+            <label class="nivelEntrenador" th:text="|Nvl ${pokemon.nivel} |"></label>
+            <label id="vidaPokeEntrenador"></label>
+            <div class="barraVida">
+                <div class="vidaRestante" id="vidaRestanteEntrenador"></div>
+            </div>
+        </div>
+        <div class="container-ball" id="container-ball">
+        <div class="ball" id="ball"></div>
+        </div>
+    </div>
+    <div class="contenedorAcciones">
+        <div class="textoAcciones" id="textoAcciones"></div>
+        <div class="acciones" id="acciones">
+            <button id="ataque" class="btnAccion">Ataques</button>
+            <button id="captura" class="btnAccion">Capturar</button>
+            <button id="pokemones" class="btnAccion">Pokemons</button>
+            <button id="huir" class="btnAccion">Huir</button>
+    
+        </div>
+    
+    
+        <div class="ataques" id="ataques" style="display: none;">
+            <button class="btnAtaque" id="ataque1" th:text="${pokemon.ataques[0].nombre}"></button>
+            <button class="btnAtaque" id="ataque2" th:text="${pokemon.ataques[1].nombre}"></button>
+            <button class="btnAtaque" id="ataque3" th:text="${pokemon.ataques[2].nombre}"></button>
+            <button class="btnAtaque" id="ataque4">Volver</button>
+        </div>
+    </div>
+    <button hidden th:id="idPokeSalvaje" 
+    th:data-idPokeSalvaje="${pokeSalvaje.id}"
+    th:data-nombrePokeSalvaje="${pokeSalvaje.nombre}"
+    th:data-defensaPokeSalvaje="${pokeSalvaje.defensaBase}"
+    th:data-ataquePokeSalvaje="${pokeSalvaje.ataqueBase}"
+    th:data-vidaPokeSalvaje="${pokeSalvaje.vidaBase}"
+    th:data-idTipoPokeSalvaje="${pokeSalvaje.tipo.id}"
+></button>
+<button hidden th:id="idPokeEntrenador"
+    th:data-id="${pokemon.especie.id}"
+    th:data-nombrePokeEntrenador="${pokemon.especie.nombre}"
+    th:data-idPokemonEntrenador="${pokemon.id}"
+    th:data-defensaPokeEntrenador="${pokemon.defensa}"
+    th:data-ataquePokeEntrenador="${pokemon.fuerza}"
+    th:data-vidaPokeEntrenador="${pokemon.vidaActual}"
+    th:data-nvlPokeEntrenador="${pokemon.nivel}"
+    
+></button>
+    <button hidden th:id="idEntrenador" th:data-idEntrenador="${entrenador.id}"></button>
+    <button hidden th:id="posiciones" 
+            th:data-posicionX="${posicion}"
+            th:data-posicionY="${posicionY}">
+    </button>
+    
+
+</body>
+<script src="/js/combate/combate.js"></script>
+</html>

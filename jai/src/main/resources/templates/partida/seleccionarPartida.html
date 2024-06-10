@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Partidas</title>
+    <link rel="stylesheet" href="/css/partida/seleccionarPartida.css">
+    <script src="/js/nuevaPartida/seleccionarPartida.js"></script>
+</head>
+<body>
+    <h1>Lista de Partidas</h1>
+    
+    <div class="cards contenedor">
+        <div th:each="partida : ${partidas}">
+            <button class="card red" onclick="redirigir(this)" th:value="${partida.entrenador.id}">
+                <p class="tip" th:text="'Entrenador: ' + ${partida.entrenador.nickname}"></p>
+                <span>Pokemones:</span>
+                <div>
+                    <label>
+                        <th:block th:each="pokemon, iterStat : ${partida.entrenador.pokemones}">
+                            <span th:text="${#strings.capitalize(pokemon.especie.nombre)}"></span>
+                            <span th:if="${!iterStat.last}">,</span>
+                        </th:block>
+                    </label>
+                </div>
+            </button>
+        </div>
+        <div class="volver" style="pointer-events: none;">
+            <a href="/menu/menu" style="pointer-events: auto;">
+                <img src="/img/volverAzul.png" alt="Volver al menú" class="iconoVolver">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

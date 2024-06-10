@@ -38,5 +38,5 @@ public class ContinuarController {
             // Manejar el error aquí, por ejemplo, mostrando un mensaje de error al usuario
             return "administrar/loginContinuar"; // Redirige de nuevo a la página de inicio de sesión
         }
-}
+    }
 }

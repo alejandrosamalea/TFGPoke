@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Partidas</title>
+    <link rel="stylesheet" href="/css/administrar/entrenador.css">
+</head>
+<body>
+    <h1>Lista de Partidas</h1>
+    
+    <div class="cards contenedor">
+        <div th:each="usuario : ${usuarios}">
+            <div class="card red">
+                <p class="tip" th:text="'Usuario: ' + ${usuario.nombreUsuario}"></p>
+                <span>Id de sus partidas:</span>
+                <div>
+                    <label>
+                        <th:block th:each="partida, iterStat : ${usuario.partidas}">
+                            <span th:text="${partida.id}"></span><span th:if="${!iterStat.last}">,</span>
+                        </th:block>
+                    </label> 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

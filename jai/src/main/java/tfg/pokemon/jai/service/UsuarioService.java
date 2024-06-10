@@ -2,6 +2,7 @@ package tfg.pokemon.jai.service;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,5 +58,11 @@ public class UsuarioService  {
         return usuario;
     }
 
+  public List<Usuario> findAll() {
+        return usuarioRepository.findAll();
+    }
 
+    public List<Usuario> findAllMenosAdmin() {
+        return usuarioRepository.findByIdNot(1L);
+    }
 }

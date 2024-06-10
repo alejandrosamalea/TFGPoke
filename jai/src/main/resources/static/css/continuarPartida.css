@@ -4,7 +4,7 @@ body{
     padding-bottom: 188px;
     padding-right: 200px;
     background-color: rgb(1, 146, 38);
-    background-image: url(/img/mapa/arboles.png);
+    background-image: url(/img/mapa/arboles.JPG);
     width: 3000px;
     margin: 0;
     padding: 0;
@@ -13,17 +13,18 @@ body{
 .limites{
     width: 2502px;
     height: 1029px;
-    border-radius: 10px;
-    border: solid rgb(159, 91, 31) 2px;
-    background-color: rgb(211, 155, 0);
     
+   
+    background-color: rgb(211, 155, 0);
+   
+    background-image: url(/img/mapa/suelo.jpg);
+    background-size: 10% 10%;
 }
 
 .casa1{
     position: absolute;
     margin-left: 80px;
     margin-top: 120px;
-    border:solid red 2px;
     width:252px ;
     height: 218px;
     background-image: url(/img/mapa/casa1.png);
@@ -34,10 +35,9 @@ body{
     position: absolute;
     margin-left: 110px;
     margin-top: 500px;
-    border:solid red 2px;
     width:252px ;
     height: 218px;
-    background-image: url(/img/mapa/centropokemon.png);
+    background-image: url(/img/mapa/gimnasio2.png);
     background-size: 100% 100%;
 
 }
@@ -45,10 +45,9 @@ body{
     position: absolute;
     margin-left: 1250px;
     margin-top: 90px;
-    border:solid red 2px;
     width:252px ;
     height: 218px;
-    background-image: url(/img/mapa/centropokemon.png);
+    background-image: url(/img/mapa/PC2.png);
     background-size: 100% 100%;
 
 }
@@ -56,10 +55,9 @@ body{
     position: absolute;
     margin-left: 1200px;
     margin-top: 500px;
-    border:solid red 2px;
     width:252px ;
     height: 218px;
-    background-image: url(/img/mapa/centropokemon.png);
+    background-image: url(/img/mapa/casa2.png);
     background-size: 100% 100%;
 
 }
@@ -78,16 +76,193 @@ body{
    border-radius: 340px 280px 200px 600px;
     border-color:  #C2B280;
 }
+.flores{
+    position: absolute;
+    width: 300px;
+    height: 190px;
+    background-image: url(/img/mapa/flores.png);
+    
+    background-size: 16.6% 16.6%;
+    margin-top: 100px;
+    margin-left: 950px;
+}
 .rio1{
     
     margin-top: -500px;
-
-    
 }
 .rio2{
     margin-top: 450px;
   
 }
+.puerta1
+{
+    width: 30px;
+    margin-top: 180px;
+    margin-left: 110px;
+    position: absolute;
+
+}
+/* colisiones casa1*/
+.frenteIzqCasa1
+{
+    width:15%;
+    margin-left: 160px;
+    margin-top: 170px;
+    position: absolute;
+
+}
+.frenteDerCasa1
+{
+    width:15%;
+    margin-left: 35px;
+    margin-top: 190px;
+    position: absolute;
+
+}
+.ladoIzqCasa1 {
+    width: 0px;
+    height: 75%;
+    margin-left: 30px;
+    margin-top: 25px;
+    position: absolute;
+
+}
+.ladoArribaCasa1 {
+    width: 75%;
+    height: 0px;
+    margin-left: 30px;
+    margin-top: 15px;
+
+    position: absolute;
+
+}
+.ladoDerCasa1 {
+    width: 0px;
+    height: 75%;
+    margin-top: 25px;
+    margin-left: 230px;
+    position: absolute;
+
+}
+
+/* colisiones casa2*/
+.ladoDerCasa2 {
+    width: 0px;
+    height: 70%;
+    margin-top: 25px;
+    margin-left: 210px;
+    position: absolute;
+
+}
+
+.puerta2
+{
+    width: 30px;
+    margin-top: 180px;
+    margin-left: 100px;
+    position: absolute;
+
+}
+
+/* colisiones casa3*/
+
+.ladoArribaCasa3 {
+    width: 75%;
+    height: 0px;
+    margin-left: 30px;
+    margin-top: 6px;
+
+    position: absolute;
+
+}
+
+.puerta3
+{
+    width: 30px;
+    margin-top: 180px;
+    margin-left: 80px;
+    position: absolute;
+}
+.frenteDerCasa3
+{
+    width:10%;
+    margin-left: 35px;
+    margin-top: 180px;
+    position: absolute;
+}
+.frenteIzqCasa3
+{
+    width:20%;
+    margin-left: 155px;
+    margin-top: 180px;
+    position: absolute;
+
+}
+.ladoIzqCasa3{
+    width: 0px;
+    height: 75%;
+    margin-left: 60px;
+    margin-top: 25px;
+    position: absolute;
+
+}
+
+/* colisiones casa4*/
+.ladoArribaIzqCasa4 {
+    width: 35%;
+    height: 0px;
+    margin-left: 30px;
+    margin-top: 30px;
+    position: absolute;
+}
+.ladoDerCasa4 {
+    width: 0px;
+    height: 65%;
+    margin-top: 50px;
+    margin-left: 210px;
+    position: absolute;
+
+}
+.ladoArribaDerCasa4 {
+    width: 30%;
+    height: 0px;
+    margin-left: 130px;
+    margin-top: 40px;
+    position: absolute;
+}
+
+.puerta4
+{
+    width: 30px;
+    margin-top: 160px;
+    margin-left: 80px;
+    position: absolute;
+}
+.frenteDerCasa4
+{
+    width:10%;
+    margin-left: 35px;
+    margin-top: 160px;
+    position: absolute;
+}
+.frenteIzqCasa4
+{
+    width:20%;
+    margin-left: 155px;
+    margin-top: 170px;
+    position: absolute;
+}
+.ladoIzqCasa4
+{
+    width: 0px;
+    height: 60%;
+    margin-left: 30px;
+    margin-top: 25px;
+    position: absolute;
+}
+
+/*FIN COLISIONES*/
+
 .rio1,.rio2{
     width:200px ;
     position: absolute;
@@ -147,7 +322,316 @@ body{
     position: absolute;
     width: 64px; /* Ancho de un solo frame */
     height: 64px; /* Altura de un solo frame */
-    background-image: url('/img/chicoSprite.png');
     background-size: 256px 256px; /* Tamaño total de la imagen */
     background-position: 0 0; /* Posición de la primera figura */
 }
+
+.espacioHierba {
+    margin-left: 33.3%;
+    height: 192px;
+    width: 220px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-image:url(/img/mapa/arbusto2.png) ;
+
+}
+
+
+.naara {
+    width: 34px; /* Ancho del frame deseado */
+    height: 64px; /* Altura del frame deseado */
+    background: url('/img/sprites/personajesVarios.png') no-repeat;
+    background-position: -128px -0px; /* Ajusta según la posición del frame deseado */
+    background-size: 912px 912px; /* Ajusta según el tamaño completo del sprite sheet */
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 340px;
+}
+.naaraColision
+{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 365px;
+
+}
+.dialogoNaara
+{
+    width: 165px;
+    height: 60px;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 290px;
+    background-color: white;
+}
+
+.menuJuego {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuJuego button {
+    width: 80%;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menuJuego button:focus {
+    background-color: white;
+    color: black;
+}
+
+.cartaInfo {
+    color: #3B4CCA;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 600px;
+    background-color: #FFDE00; 
+    border: 3px solid #3B4CCA;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+}
+.botonCerrarInfo {
+    background-color: #CC0000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.imagenEntrenador {
+    width: 100px;
+    height: 100px;
+}
+.limitebajo{
+    width: 2522px;
+    background-color: red;
+    background-image: url(/img/mapa/arbolesAbajo.jpg);
+    background-size:4.999% 100% ;
+    margin-left: -20px;
+    height: 110px;
+    margin-top: 0px;
+<<<<<<< HEAD
+}
+=======
+}
+.excavadora2,.excavadora1,.fuente{
+    
+    height: 100px;
+    position:absolute;
+   
+   
+}
+.excavadora1{
+    width: 100px;
+    margin-left: 390px; 
+    margin-top: 50px; 
+    background-image: url(/img/mapa/excavadora1.png);
+    background-size: 100% 100%;
+}
+.excavadora2{
+    width: 120px;
+    margin-top: 50px; 
+margin-left: 40px;
+    background-image: url(/img/mapa/excavadora2.png);
+    background-size: 100% 100%;
+}
+.fuente{
+    width: 120px;
+    margin-left: 210px; 
+    background-image: url(/img/mapa/fuente.png);
+    background-size: 100% 100%;
+    margin-top: 50px; 
+
+}
+.vallas{
+   
+    margin-left: 1900px;
+    margin-top: -80px; 
+    width: 550px;
+    height: 220px;
+    border-radius: 20px;
+    border: #000 solid 1px;
+    border-bottom: 7px solid rgba(126, 36, 0, 0.772);
+    border-left: 7px solid rgba(126, 36, 0, 0.772);
+    background-image: url(/img/mapa/tierra.JPG);
+    background-size: 20% 60%;
+}
+.avion{
+    position: absolute;
+    margin-left: 2100px;
+    margin-top: 430px; 
+    width: 450px;
+    height: 300px;
+   
+   
+    background-image: url(/img/mapa/avion.png);
+    background-size: 100% 100%;
+}
+
+
+
+ .limiteAvionCentro
+ {
+    border: #ff0000 solid 1px;
+
+    position: absolute;
+    margin-left: 2300px;
+    margin-top: 540px; 
+    width: 100px;
+    height: 50px;
+ }
+ .limiteAvionSegurata
+ {
+    border: #ff0000 solid 1px;
+
+    position: absolute;
+    margin-left: 2410px;
+    margin-top: 570px; 
+    width: 25px;
+    height: 50px;
+ }
+.carretera{
+    position: absolute;
+    margin-left: 2100px;
+    margin-top: 540px; 
+    width: 3950px;
+    height: 110px;
+   
+    border: #000 solid 1px;
+   
+    background-image: url(/img/mapa/carretera.png);
+    background-size: 3% 100%;
+}
+.gonzalo{
+    position: absolute;
+    margin-left: 1900px;
+    margin-top: -260px; 
+    width: 48px;
+    height: 64px;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation:mover 5s infinite linear,moverse 5s steps(4) infinite  ;
+    background: url('/img/mapa/gonzalo.png');
+}
+.textoGonzalo{
+    position: absolute;
+    margin-left: 1900px;
+    margin-top: -370px; 
+    
+   
+
+    width: 200px;
+    height: 110px;
+   
+    
+    background-color: white;
+    border: solid 2px black ;
+    border-radius: 15px;
+    padding: 4px;
+    animation:mover 5s infinite linear;
+    opacity: 0.7;
+}
+
+@keyframes mover {
+    0% {
+        transform: translateX(0px);
+    }
+    35%{
+      transform :translateX(502px);
+    }
+    50%  {
+      transform: translateX(502px)translateY(166px);
+
+  }
+  
+  85%  {
+    transform: translateX(0px)translateY(166px);
+
+}
+  100%  {
+    transform: translateX(0px)translateY(0px);
+
+}
+}
+@keyframes moverse {
+    0% {
+        background-position: 0px -128px;
+    }
+    17.5%{
+        background-position: 192px -128px;  
+    }
+    17.6%{
+        background-position: 0px -128px; 
+    }
+
+    35% {
+        background-position: 192px -128px;
+    }
+
+    35.1% {
+        background-position: 0px 0px;
+    }
+
+    50% {
+        background-position: 192px 0px;
+    }
+
+    50.1% {
+        background-position: 0px -64px;
+    }
+    67.5%{
+        background-position: 192px -64px;
+    }
+    67.6%{
+        background-position: 0px -64px; 
+    }
+
+    85% {
+        background-position: 192px -64px;
+    }
+
+    85.1% {
+
+
+        background-position: 0px -192px;
+    }
+
+    100% {
+
+
+        background-position: 192px -192px;
+    }
+}
+ 
+>>>>>>> 04965b442d8b24eba99ee5976bad58f18ab1cbb3

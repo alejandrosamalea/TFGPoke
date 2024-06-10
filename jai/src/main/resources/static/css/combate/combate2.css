@@ -1,0 +1,341 @@
+html, body {
+    height: 100%;
+    margin: 0; 
+    overflow-x: hidden;
+    overflow: hidden;
+}
+body{
+    background: linear-gradient(to bottom, #2d558f, #6fa7d8, #9acbff);
+
+}
+
+.generalCombate {
+    height: 70vh;
+    width: 100vw;
+
+  
+}
+
+.infoPokeSalvaje
+{
+    position: absolute;
+    width: 40vw; 
+    height: 15vh; 
+    margin-left: 1%;
+    margin-top: 1%;
+    border: 5px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 5px 30px 5px;
+    padding-left: 10px;
+    font-size: 30px;
+}
+ .infoPokeEntrenador {
+   position: absolute;
+
+    width: 40vw; 
+    height: 15vh; 
+    margin-top: 29%;
+    margin-left: 55%;
+    border: 5px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 5px 30px 5px;
+    padding-left: 10px;
+    font-size: 30px;
+}
+
+.imgPokeSalvaje{
+    position: absolute;
+    width: 16vw;
+    height: 16vh;
+    margin-left: 68%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circulo1,.circulo2{
+    position: absolute;
+    margin-top: 75%;
+    background: radial-gradient(circle at center, #2B3A67 0%, #3A4A85 25%, #495AA3 50%, #587AC1 100%);
+ border-radius: 50%;
+    z-index: -1;  
+    border: solid blue 10px;
+}
+.circulo1 {
+   
+    width: 40vw;
+    height: 24vh; 
+}
+.circulo2 {
+    width: 50vw;
+    height: 28vh;
+}
+.imgPokeEntrenador {
+    position: absolute;
+    background-size: contain;
+    width: 20vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 26%;
+    margin-left: 17%;
+    z-index: -1;
+}
+.pokemonSalvaje{
+    width: 14vw;
+    height: 30vh;
+    /* animation: encoger 6s infinite ; */
+}
+.pokemonEntrenador{
+    width: 20vw;
+    height: 50vh;
+} 
+/* .acciones,.ataques  {
+    margin-top: 8%; 
+    width: 100%;
+    
+    border-radius: 20px;
+    background-color: transparent;
+    height: 12vh;
+    justify-items: center; 
+    align-items: center;
+} */
+
+
+.contenedorAcciones {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    height: 12vh;
+    border-radius: 20px;
+    background-color: transparent;
+    
+    position: absolute;
+    bottom: 0;
+}
+
+.textoAcciones {
+    width: 49%; 
+    height: 12vh;
+    border-radius: 20px;
+    border: solid black 5px;
+    background-color: rgb(255, 255, 255);  
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.acciones,.ataques {
+    margin-left: 2%;
+    width: 60%; 
+    border-radius: 20px;
+    background-color: transparent;
+    height: 12vh;
+    justify-items: center; 
+    align-items: center;
+    
+}
+
+.btnAccion {
+    width: 49%;
+    margin: 0 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+  
+}
+
+
+.btnAccion,.btnAtaque{
+    color: white;
+    width: 47%;
+    margin-left: 0.4%;
+    margin-top: 0.4%;
+    height: 45%;
+    font-size: 16px;
+    border: none; 
+    border-radius: 5px; 
+}
+
+.nivelSalvaje{
+    position: absolute;
+    width: 20%;
+    margin-left: 50%;
+  
+}
+.nivelEntrenador{
+    position: absolute;
+    width: 20%;
+    margin-left: 45%;
+   
+}
+.container-ball{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin-top: 30%;
+    margin-left: -100px;
+}
+.ball{
+    width: 100%;
+    height: 100%;
+   background-size: 100% 100%;
+  
+}
+
+#ataque,#ataque1{ 
+    background: linear-gradient(to bottom, #ff0000, #cc0000, #990000, #660000, #330000);
+}
+#ataque:focus,#ataque1:focus {
+    background: linear-gradient(to bottom, rgb(238, 101, 101), rgb(204, 91, 91), rgb(170, 81, 81), rgb(136, 71, 71), rgb(102, 61, 61));
+
+}
+#captura,#ataque2 {
+    background: linear-gradient(to bottom, #ffff00, #ffcc00, #cc9900, #996600, #663300);
+}
+#captura:focus,#ataque2:focus{
+    background: linear-gradient(to bottom, rgb(245, 245, 90), rgb(220, 220, 80), rgb(195, 195, 70), rgb(170, 170, 60), rgb(145, 145, 50));
+}
+#pokemones,#ataque3 {
+    background: linear-gradient(to bottom, #0000ff, #0000cc, #000099, #000066, #000033);
+}
+#pokemones:focus,#ataque3:focus {
+    background: linear-gradient(to bottom, rgb(87, 87, 252), rgb(77, 77, 224), rgb(67, 67, 196), rgb(57, 57, 168), rgb(47, 47, 140));
+}
+#huir,#ataque4 {
+    background: linear-gradient(to bottom, #00ff00, #00cc00, #009900, #006600, #003300);
+}
+#huir:focus,#ataque4:focus{
+    background: linear-gradient(to bottom, rgb(71, 255, 71), rgb(61, 230, 61), rgb(51, 204, 51), rgb(41, 179, 41), rgb(31, 153, 31));
+
+}
+
+#ataque1 {
+    grid-area: ataque1;
+}
+#ataque2 {
+    grid-area: ataque2;
+}
+#ataque3 {
+    grid-area: ataque3;
+}
+#ataque4 {
+    grid-area: ataque4;
+}
+#ataque, #captura, #huir {
+    grid-area: ataque;
+}
+#captura {
+    grid-area: captura;
+}
+#huir {
+    grid-area: huir;
+}
+.barraVida {
+    border: solid black 2px;
+    border-radius: 10px;
+    height: 2vh;
+    width: 70%;
+    background-color: lightgray; /* Color de fondo de la barra vacía */
+    margin-top: 5%;
+    margin-left: 20%;
+    padding: 1px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.vidaRestante {
+    height: 100%;
+    background-color: lightgreen; /* Color de la barra de vida */
+    border-radius: 8px; /* Ajusta para coincidir con el contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.vida
+{
+    position: absolute;
+    margin-top: 8%;
+    margin-left: 2%;
+}
+
+.vida2
+{
+    position: absolute;
+    margin-top: 8%;
+    margin-right: 30%;
+}
+
+img {
+    height: 120px;
+    width: 120px;
+    display: block;
+}
+
+@keyframes rotar {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(1440deg); 
+    }
+    50% {
+        transform: rotate(1440deg); 
+    }
+    60% {
+        transform: rotate(1400deg); 
+    }
+    70% {
+        transform: rotate(1480deg); 
+    }
+    80% {
+        transform: rotate(1400deg); 
+    }
+    90% {
+        transform: rotate(1480deg); 
+    }
+    100% {
+        transform: rotate(1440deg); 
+    }
+}
+@keyframes captura {
+    0% {
+        margin-top: 27%;
+        margin-left: -10%;
+    }
+    
+    30% {
+        margin-top: 4%;
+        margin-left: 72%;
+    }
+    50% {
+        margin-top: 10%;
+        margin-left: 72%;
+    }
+    100% {
+        margin-top: 10%;
+        margin-left: 72%;
+    }
+}
+@keyframes encoger {
+    0% {
+        transform: scale(1);
+    }
+    
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+    
+
+   

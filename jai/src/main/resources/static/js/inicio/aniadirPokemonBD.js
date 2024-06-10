@@ -10,7 +10,6 @@ function fetchPokemonData(i) {
     return fetch(URL + i)
         .then(response => response.json())
         .then(poke => {
-
             // Obtener el primer tipo del Pokémon
             let primerTipo = poke.types[0].type.name;
             let defensa = poke.stats.find(stat => stat.stat.name === "defense").base_stat;
@@ -39,6 +38,7 @@ function fetchSequentially(index) {
                 document.getElementById("progress").style.width = progress + "%";
                 // y, cuando se complete, llama recursivamente a fetchSequentially con el siguiente índice.
                 fetchSequentially(index + 1);
+
             })
             .catch(error => console.error('Error al cargar los datos del Pokémon:', error));
     } else {

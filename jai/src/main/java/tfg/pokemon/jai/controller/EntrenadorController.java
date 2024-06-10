@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import tfg.pokemon.jai.service.AtaqueService;
 import tfg.pokemon.jai.service.PartidaService;
+import tfg.pokemon.jai.service.UsuarioService;
 
 @RequestMapping("/entrenador")
 @Controller
@@ -23,15 +24,20 @@ public class EntrenadorController {
     
     @Autowired
     private PartidaService partidaService;
+
+    @Autowired
+    private UsuarioService usuarioService;
    
 
     @GetMapping("r")
     public String r(ModelMap m) {
+        m.put("usuarios", usuarioService.findAllMenosAdmin());
         m.put("partidas", partidaService.findAll());
         m.put("ataques", ataqueService.findAll());
-        m.put("view", "administrar/ataque/r");
+        m.put("view", "administrar/entrenador/r");
         return "_t/frame";
     }
+    
     @GetMapping({"update"})
     public String update(ModelMap m, @RequestParam("id") Long idAtaque) {
        m.put("idAtaque", this.ataqueService.findById(idAtaque));

@@ -23,4 +23,7 @@ public class PartidaService {
     public List<Partida> findAll() {
         return partidaRepository.findAll();
     }
+    public Partida findByIdEntrenador(Long idEntrenador) {
+        return partidaRepository.findByEntrenadorId(idEntrenador);
+    }
 }

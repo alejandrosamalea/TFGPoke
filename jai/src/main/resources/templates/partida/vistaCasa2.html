@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa 2</title>
+<link rel="stylesheet" href="/css/partida/interiorCasa2.css">
+</head>
+<body>
+    <body>
+        <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/jquery.animateSprite.min.js"></script>
+    <button hidden th:id="idEntrenador" th:value="${entrenador.id}"></button>
+    <button hidden th:id="posicion" th:value="${posicion}"></button>
+    <button hidden th:id="posicionY" th:value="${posicionY}"></button>
+
+            <div class="fondoCasa">
+            <div class="chico" id="chico" 
+            th:data-idEntrenador="${entrenador.id}"
+            th:data-nombre="${entrenador.nickname}"
+            th:data-genero="${entrenador.genero}"
+            ></div>
+            <div class="puerta"></div>
+            <div class="pared paredIzq"></div>
+            <div class="pared paredAbajo1"></div>
+            <div class="pared paredAbajo2"></div>
+            <div class="pared paredDer"></div>
+            <div class="pared paredArriba1"></div>
+            <div class="pared paredEntrada1"></div>
+            <div class="pared paredArriba2"></div>
+            <div class="pared paredArriba3"></div>
+            <div class="pared paredArriba4"></div>
+            <div class="pared paredMostrador1"></div>
+            <div class="pared paredMostrador2"></div>
+            <div class="pared mesa1"></div>
+            <div class="pared mesa2"></div>
+            <div class="pared mesa3"></div>
+            <div class="pared mesa4"></div>
+            <div class="pared paredGimnasioIzq"></div>
+            <div class="pared paredGimnasioDer"></div>
+            <div class="pared paredEscaletasIzq"></div>
+            <div class="pared paredEscaletasDer"></div>
+            <div class="pared paredArribaTodo"></div>
+            <div class="pared gimnasioArriba"></div>
+            <div class="pared gimnasioMesaIzq"></div>
+            <div class="pared gimnasioMesaDer"></div>
+            <div class="personajes personaje1"></div>
+            <div class="personajes personaje2"></div>
+            <div class="personajes personaje3"></div>
+            <div class="personajes personaje4"></div>
+            <div class="personajes personaje5"></div>
+            <div class="personajes personaje6"></div>
+            <div class="personajes personaje7"></div>
+            <div class="personajes personaje8"></div>
+            <div id="maria" data-value="1" class="npc maria"></div>
+            <div class="pared mariaColision"></div>
+        </div>
+        <script src="/js/nuevaPartida/interiorCasas/interiorCasa2.js"></script>
+    </body>
+</body>
+</html>

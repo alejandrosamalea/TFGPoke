@@ -2,12 +2,11 @@ package tfg.pokemon.jai.domain;
 
 
 
-import java.io.File;
 import java.util.Collection;
 
-import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,21 +19,21 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Especie {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
   
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Tipo tipo;
 
-    @OneToMany(mappedBy = "especie")
+    @OneToMany(mappedBy = "especie", fetch = FetchType.LAZY)
     private Collection<Pokemon> contiene;
 
     private Integer vidaBase;
 
     private Integer defensaBase;
-
 
     private Integer ataqueBase;
 

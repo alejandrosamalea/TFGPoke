@@ -21,7 +21,7 @@ public class Entrenador {
     private String nickname;
     private boolean genero;
 
-    @OneToMany (mappedBy = "entrenadorPokemon")
+    @OneToMany(mappedBy = "entrenadorPokemon")
     private Collection<Pokemon> pokemones;
     
 }

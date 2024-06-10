@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver pokemones</title>
+    <link rel="stylesheet" href="/css/combate/verPokemones.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="general">
+            <button th:each="pokemon, indice : ${pokemones}" 
+                    th:id="${pokemon.especie.id}"
+                    th:data-idPoke="${pokemon.id}"
+                    th:classappend="botonesPoke">
+                <div class="pokeInfo">
+                    <div th:id="'pokeImagen' + ${pokemon.especie.id}" class="pokeImagen"></div>
+                    <div class="infoPoke">
+                        <div th:text="${pokemon.especie.nombre}"></div>
+                        <div th:text="'Nv' + ${pokemon.nivel}"></div>
+                        <div class="vida">
+                            <div>PS</div>
+                            <div th:text="${pokemon.vidaActual} + '/' + ${pokemon.vida}">108/108</div>
+                        </div>
+                        <div id="acciones"></div>
+                    </div>   
+                </div>
+            </button>
+        
+        <button th:id="volver" th:text="| Volver al combate |"></button>
+        <button hidden th:id="infoCombate"
+                th:data-idEntrenador="${entrenador.id}"
+                th:data-idPokeCombate="${idPokeCombateActual}"
+                th:data-idPokeSalvaje="${idPokeSalvaje}"
+                th:data-vidaActualPokeSalvaje="${vidaActualPokeSalvaje}"
+                th:data-posicionX="${posicionX}"
+                th:data-posicionY="${posicionY}"
+        ></button>
+    </div>
+</body>
+<script src="/js/combate/verPokemones.js"></script>
+</html>

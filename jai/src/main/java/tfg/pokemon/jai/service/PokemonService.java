@@ -28,15 +28,22 @@ public class PokemonService {
     public void save(Long idPoke, Entrenador entrenador){
         Collection<Ataque> ataques = new ArrayList<>();
         Especie especie = especieService.findById(idPoke);
-        ataques.add(ataqueService.findById(1L));
-        ataques.add(ataqueService.findById(3L));
-        ataques.add(ataqueService.findById(2L));
+        while (ataques.size() < 3) {
+            Ataque ataque = ataqueService.obtenerAtaqueAleatorio(especie.getTipo().getId());
+            if (!ataques.contains(ataque)) {
+                ataques.add(ataque);
+            }
+        }
         Pokemon pokemon = new Pokemon();
         pokemon.setEntrenadorPokemon(entrenador);
         pokemon.setNivel(3);
         pokemon.setEspecie(especie);
         pokemon.setAtaques(ataques);
         pokemon.setExperiencia(0);
+        pokemon.setDefensa(pokemon.getNivel() * especie.getDefensaBase());
+        pokemon.setFuerza(pokemon.getNivel() * especie.getAtaqueBase());
+        pokemon.setVida(pokemon.getNivel() * especie.getVidaBase());
+        pokemon.setVidaActual(pokemon.getVida());
         pokemonRepository.save(pokemon);
     }
     public List<Pokemon> findAll() {
@@ -44,5 +51,55 @@ public class PokemonService {
     }
     public Pokemon findById(Long idPoke) {
         return pokemonRepository.findById(idPoke).orElse(null);
+    }
+    public List<Pokemon> findByEntrenador(Long idEntrenador) {
+        return pokemonRepository.findByEntrenadorPokemonId(idEntrenador);
+    }
+
+    public void updateVida(Long idPoke, Integer nuevaVida) {
+        Pokemon pokemon = pokemonRepository.findById(idPoke).orElse(null);
+        if (pokemon != null) {
+            // Actualizar el valor de vida del Pokémon
+            pokemon.setVidaActual(nuevaVida);
+            // Guardar los cambios en la base de datos
+            pokemonRepository.save(pokemon);
+        } else {
+
+            // Manejar el caso en el que no se encuentre el Pokémon con el ID especificado
+            // Aquí puedes lanzar una excepción, registrar un mensaje de error, etc.
+        }
+    }
+    public void captura(Long idEspecie, Entrenador entrenador, Integer lvPokeSalvaje) {
+        Collection<Ataque> ataques = new ArrayList<>();
+        Especie especie = especieService.findById(idEspecie);
+        while (ataques.size() < 3) {
+            Ataque ataque = ataqueService.obtenerAtaqueAleatorio(especie.getTipo().getId());
+            if (!ataques.contains(ataque)) {
+                ataques.add(ataque);
+            }
+        }
+        ataques.add(ataqueService.obtenerAtaqueAleatorio(especie.getTipo().getId()));
+        ataques.add(ataqueService.obtenerAtaqueAleatorio(especie.getTipo().getId()));
+        ataques.add(ataqueService.obtenerAtaqueAleatorio(especie.getTipo().getId()));
+        Pokemon pokemon = new Pokemon();
+        pokemon.setEntrenadorPokemon(entrenador);
+        pokemon.setNivel(lvPokeSalvaje);
+        pokemon.setEspecie(especie);
+        pokemon.setAtaques(ataques);
+        pokemon.setExperiencia(0);
+        pokemon.setDefensa(lvPokeSalvaje * especie.getDefensaBase());
+        pokemon.setFuerza(lvPokeSalvaje * especie.getAtaqueBase());
+        pokemon.setVida(lvPokeSalvaje * especie.getVidaBase());
+        pokemon.setVidaActual(pokemon.getVida());
+        pokemonRepository.save(pokemon);
+    }
+    public List<Pokemon> findPartidasByEntrenadorId(Long idEntrenador) {
+        return pokemonRepository.findAllByEntrenadorPokemonId(idEntrenador);
+    }
+    public void curarPokemones(List<Pokemon> pokemones) {
+        for (Pokemon pokemon : pokemones) {
+            pokemon.setVidaActual(pokemon.getVida());
+            pokemonRepository.save(pokemon);
+        }
     }
 }

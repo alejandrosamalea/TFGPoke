@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego</title>
+<link rel="stylesheet" href="/css/partida/interiorCasa4.css">
+</head>
+<body>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/jquery.animateSprite.min.js"></script>
+<button hidden th:id="idEntrenador" th:value="${entrenador.id}"></button>
+<button hidden th:id="posicion" th:value="${posicion}"></button>
+<button hidden th:id="posicionY" th:value="${posicionY}"></button>
+    <div class="fondoCasa">
+        <div class="chico" id="chico" 
+        th:data-idEntrenador="${entrenador.id}"
+        th:data-nombre="${entrenador.nickname}"
+        th:data-genero="${entrenador.genero}"
+        ></div>
+        <div class="puerta"></div>
+        <div class="pared paredIzq"></div>
+        <div class="pared paredAbajo1"></div>
+        <div class="pared paredAbajo2"></div>
+        <div class="pared paredDer"></div>
+        <div class="pared paredArriba1"></div>
+        <div class="pared paredArriba2"></div>
+        <div class="pared paredArriba3"></div>
+        <div class="pared paredArriba4"></div>
+        <div class="pared paredMostrador1"></div>
+        <div class="pared paredMostrador2"></div>
+        <div class="pared mesa1"></div>
+<<<<<<< HEAD
+        <div class="pared mesa2"></div>
+    
+=======
+        <div class="pared mesa2">
+            <p class="dialogoNaara" hidden></p>
+        </div>
+        <div class="pared tioRaro"></div>
+        
+>>>>>>> 04965b442d8b24eba99ee5976bad58f18ab1cbb3
+    </div>
+    <script src="/js/nuevaPartida/interiorCasas/interiorCasa4.js"></script>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import tfg.pokemon.jai.service.AtaqueService;
 import tfg.pokemon.jai.service.EspecieService;
+import tfg.pokemon.jai.service.PokemonNPCService;
 import tfg.pokemon.jai.service.TipoService;
 import tfg.pokemon.jai.service.UsuarioService;
 
@@ -23,6 +24,8 @@ public class IndexController {
      @Autowired
    private EspecieService pokemonService;
 
+   @Autowired
+   private PokemonNPCService pokemonNPCService;
 
     @GetMapping("/")
     public String pantallaCarga(
@@ -30,11 +33,9 @@ public class IndexController {
     ) {
         m.put("view","index/pantallaCarga");
         m.put("pokemones", pokemonService.findAll());
-        m.put("pokemones", pokemonService.findAll());
         usuarioService.init();
         tipoService.init();
         ataqueService.init();
-
         return "/index/pantallaCarga";
     }
 
@@ -42,6 +43,8 @@ public class IndexController {
     public String index(
         ModelMap m
     ) {
+        pokemonNPCService.init();
+
         m.put("view","index/index");
         return "/index/index";
     }

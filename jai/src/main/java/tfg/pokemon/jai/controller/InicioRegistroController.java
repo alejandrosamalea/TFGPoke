@@ -66,5 +66,17 @@ public class InicioRegistroController {
 		s.invalidate();
 		return "redirect:/index";
 	}
+
+    @GetMapping("/vueltaMenu")
+    public String vueltaMenu(
+        ModelMap m,
+        @RequestParam("idUsuario") Long idUsuario,
+        HttpSession sesion
+    ) {
+        Usuario usuario = usuarioRepository.findById(idUsuario).orElse(null);
+        sesion.setAttribute("usuario", usuario);
+        m.put("view", "/menu/menu");
+        return "redirect:/menu/menu";
+    }
 	
 }
