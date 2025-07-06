@@ -33,3 +33,7 @@ El juego también cuenta con una sección de administrador donde puedes:
 ---
 
 ¡Diviértete explorando y combatiendo en TFGPoke!
+
+## 🧾 Créditos
+
+Desarrollado por Alejandro Ibañez , Ivan Castilla ([github.com/M3gaicm](https://github.com/M3gaicm)) y Javier Lucas ([github.com/JavierLucasDavo](https://github.com/JavierLucasDavo))
