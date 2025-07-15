@@ -5,7 +5,7 @@
 Para ejecutar este proyecto necesitarás:
 
 - **XAMPP**: para gestionar el servidor Apache y la base de datos MySQL.
-- **Java 18**: el proyecto está desarrollado con Java 18.
+- **Java 17**: el proyecto está desarrollado con Java 17.
 - **Spring Boot** .
 - Tener una base de datos MySQL llamada `pokemon`.
 
